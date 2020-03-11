@@ -63,14 +63,7 @@ padding-top:80%;
 background-size: contain;
 background-repeat:no-repeat;
 }
-#legende {
-padding:0;
-margin:0;
-top:10%
-left:10%
-position:absolute;
-font-size: 2vw;
-}
+
 #Temperature {
 background-color:#4d4948;
 color:red;
