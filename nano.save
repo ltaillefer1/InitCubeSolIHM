@@ -1,0 +1,89 @@
+diff --cc test.html index 7e417bf,1e9315d..0000000 --- a/test.html +++ 
+b/test.html @@@ -326,78 -330,78 +326,158 @@@
+                          }
+                      }
+              </script> ++<<<<<<< HEAD + <ul id="menu"> + <li><a 
+ href="#">Instrument</a> + <ul> + <li><a 
+ href="#pageCubesat">CubeSat</a></li> + <li><a 
+ href="#pageMagnetometre">Magnétomètre</a></li> + <li><a 
+ href="#pageCamera">Caméra</a></li> + </ul> + </li> + </ul> + <div 
+ style="text-align: center;"> + <img src="./images/imgMagneto.png" 
+ width="500" height="350" /> + </div> + <div id="donnesMagneto"> + 
+ <table> + <tr> + <th><mark>Valeur BX (μT) : </mark></th> + <td 
+ id="ValeurMagnetoBX"></td> + </tr> + <tr> + <th><mark>Valeur BY (μT) : 
+ </mark></th> + <td id="ValeurMagnetoBY"></td> + </tr> + <tr> + 
+ <th><mark>Valeur BZ (μT) : </mark></th> + <td 
+ id="ValeurMagnetoBZ"></td> + </tr> + </table> + </div> + <div 
+ data-role="footer" data-position="fixed" data-tap-toggle="false" 
+ data-fullscreen="false" data-theme="b"> + <div data-role="navbar" 
+ data-grid="" data-iconpos="left"> + <ul> + <li><a 
+ href="#pageAbout">About</a></li> + <li><a href="#page1">Etat</a></li> + 
+ <li><a href="#page2">Synoptique</a></li> + <li><a 
+ href="#page3">Commande</a></li> + <li><a href="#page4">Matrice</a></li> 
+ + </ul>
+++||||||| 6126134 + <ul id="menu"> + <li><a href="#">Instrument</a> + 
+<ul> + <li><a href="#pageCubesat">CubeSat</a></li> + <li><a 
+href="#pageMagnetometre">Magnétomètre</a></li> + <li><a 
+href="#pageCamera">Caméra</a></li> + </ul> + </li> + </ul> + <div 
+style="text-align: center;"> + <img src="./images/imgMagneto.png" 
+width="500" height="350" /> + </div>
+ - ++ <div id="donnesMagneto"> + <table> + <tr> + <th><mark>Valeur BX 
+(μT) : </mark></th> + <td id="ValeurMagnetoBX"></td> + </tr> + <tr> + 
+<th><mark>Valeur BY (μT) : </mark></th> + <td id="ValeurMagnetoBY"></td> 
++ </tr> + <tr> + <th><mark>Valeur BZ (μT) : </mark></th> + <td 
+id="ValeurMagnetoBZ"></td> + </tr> + </table>
+ - ++ </div> + <div data-role="footer" data-position="fixed" 
+data-tap-toggle="false" data-fullscreen="false" data-theme="b"> + <div 
+data-role="navbar" data-grid="" data-iconpos="left"> + <ul> + <li><a 
+href="#pageAbout">About</a></li> + <li><a href="#page1">Etat</a></li> + 
+<li><a href="#page2">Synoptique</a></li> + <li><a 
+href="#page3">Commande</a></li> + <li><a href="#page4">Matrice</a></li> 
++ </ul> + </div>
+ - </div> - </div> - <!-- - ====================================== - 
+ page Camera - ====================================== - --> - <div 
+ data-role="page" id="pageCamera" data-theme="b"> - <div 
+ data-role="header" data-position="fixed" data-tap-toggle="false" 
+ data-fullscreen="false" data-theme="b"> - <div> - <a 
+ href="https://cnes.fr/fr/" target="_blank"><img id="imgCnes" 
+ src="images/cnes.png" /></a> - </div> - </div>
+++======= + <ul id="menu"> + <li><a href="#">Instrument</a> + <ul> + 
+<li><a href="#pageCubesat">CubeSat</a></li> + <li><a 
+href="#pageMagnetometre">Magnétomètre</a></li> + <li><a 
+href="#pageCamera">Caméra</a></li> + </ul> + </li> + </ul>
+ - <div id="slideshow"> - <div> - <img src="./images/Magnetometre.png" 
+ width="400" height="300"> - </div> - <div> - <img 
+ src="./images/ihm_camera.jpg" width="300" height="260"> - </div> - 
+ <div> - <img src="./images/imgMagneto.png" width="300" height="260">
+++ <div style="text-align: center;"> ++ <img 
+src="./images/imgMagneto.png" width="500" height="350" /> ++ </div> ++ 
+++ <table> ++ <tr> ++ <th><mark>Valeur BX (μT) : </mark></th> ++ <td 
+id="ValeurMagnetoBX"></td> ++ </tr> ++ <tr> ++ <th><mark>Valeur BY (μT) 
+: </mark></th>
+++ <td id="ValeurMagnetoBY"></td> ++ </tr> ++ <tr> ++ <th><mark>Valeur 
+BZ (μT) : </mark></th> ++ <td id="ValeurMagnetoBZ"></td> ++ </tr> ++ 
+</table> ++ ++ <div data-role="footer" data-position="fixed" 
+data-tap-toggle="false" data-fullscreen="false" data-theme="b"> ++ <div 
+data-role="navbar" data-grid="" data-iconpos="left"> ++ <ul> ++ <li><a 
+href="#pageAbout">About</a></li> ++ <li><a href="#page1">Etat</a></li> 
+++ <li><a href="#page2">Synoptique</a></li> ++ <li><a 
+href="#page3">Commande</a></li> ++ <li><a href="#page4">Matrice</a></li> 
+++ </ul> + </div> ++>>>>>>> fe853a9eadf2abbcc581e7775e7dbca8b2a15b2b
+              </div> - <script> + </div> + </div> + <!-- + 
+ ====================================== + page Camera + 
+ ====================================== + --> + <div data-role="page" 
+ id="pageCamera" data-theme="b"> + <div data-role="header" 
+ data-position="fixed" data-tap-toggle="false" data-fullscreen="false" 
+ data-theme="b"> + <div> + <a href="https://cnes.fr/fr/" 
+ target="_blank"><img id="imgCnes" src="images/cnes.png" /></a> + </div> 
+ + </div> + <ul id="menu"> + <li><a href="#">Instrument</a> + <ul> + 
+ <li><a href="#pageCubesat">CubeSat</a></li> + <li><a 
+ href="#pageMagnetometre">Magnétomètre</a></li> + <li><a 
+ href="#pageCamera">Caméra</a></li> + </ul> + </li> + </ul> + <div 
+ id="slideshow"> + <div> + <img src="./images/Magnetometre.png" 
+ width="400" height="300"> + </div> + <div> + <img 
+ src="./images/ihm_camera.jpg" width="300" height="260"> + </div> + 
+ <div> + <img src="./images/imgMagneto.png" width="300" height="260"> + 
+ </div> + </div> + <script>
+              $("#slideshow > div:gt(0)").hide();
+  
+              setInterval(function() {
