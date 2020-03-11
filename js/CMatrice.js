@@ -35,9 +35,9 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 	var G;
 	var B;
 
-	R = this.map(valeur, 255, 0, seuilHaut, seuilMilieu);
-	G = this.map(valeur, 0, 255, seuilMilieu, seuilBas);
-	B = this.map(valeur, 0, 255, seuilBas, seuilNull);
+	R = this.map(valeur, 255, 0, this.seuilHaut, this.seuilMilieu);
+	G = this.map(valeur, 255, 0, this.seuilMilieu, this.seuilBas);
+	B = this.map(valeur, 255, 0, this.seuilBas, this.seuilNull);
 
 	var couleur = '#'+('0'+R.toString(16)).slice(-2)+"00"+('0'+B.toString(16)).slice(-2)+"00"+('0'+G.toString(16)).slice(-2);
 
