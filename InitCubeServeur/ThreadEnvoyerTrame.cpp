@@ -62,7 +62,34 @@ void* ThreadEnvoyerTrame(void *){
 				<<"\"occupMemoire\" : "
 				<<rand()%101<<"},"
 
+			//Ouverture de l'objet magneto dans le JSON
+			<<"\"magneto\" : {"
 
+				srand((unsigned)time(NULL));
+            	int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
+
+				//Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
+				//Magnetomètre
+            <<"\"ValeurMagnetoBX\":"
+            <<nombre_aleatoire<<","
+
+            //Magnetomètre
+            <<"\"ValeurMagnetoBY\":"
+            <<nombre_aleatoire<<","
+
+            //Magnetomètre
+            <<"\"ValeurMagnetoBZ\":"
+            <<nombre_aleatoire<<"},"
+
+				//Ouverture de l'objet camera
+			<<"\"camera\" : { "
+
+				<<"\"InfoCamera1\":"
+            	<<rand()%101<<","
+
+            	//Caméra
+            	<<"\"InfoCamera2\":"
+            	<<rand()%101<<"},"
 
 			//température0
 			<< "\"temp\":"
@@ -88,30 +115,7 @@ void* ThreadEnvoyerTrame(void *){
 			<<"\"camera\":"
 			<<rand()%2
 
-			srand((unsigned)time(NULL));
-            int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
-
-            //Magnetomètre
-            <<"\"ValeurMagnetoBX\":"
-            <<nombre_aleatoire<<","
-
-            //Magnetomètre
-            <<"\"ValeurMagnetoBY\":"
-            <<nombre_aleatoire<<","
-
-            //Magnetomètre
-            <<"\"ValeurMagnetoBZ\":"
-            <<nombre_aleatoire<<","
-
-            //Caméra
-            <<"\"InfoCamera1\":"
-            <<rand()%101<<","
-
-            //Caméra
-            <<"\"InfoCamera2\":"
-            <<rand()%101<<","
-				
-			<< "}"<<endl;
+     << "}"<<endl;
 			
 
 /****************************Envoi d'une trame**************************/
