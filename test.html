@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" href="css/siteCss.css">
+           
     <link href="css/jquery-ui.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script src="/node_modules/chart.js/dist/Chart.bundle.js"></script>
@@ -20,7 +21,7 @@
 
 <body>
     <script>
-        var source = new EventSource("cgi-bin/CubeEventServer.cgi");
+    var source = new EventSource("cgi-bin/CubeEventServer.cgi");
     source.onmessage = function(event) {
         var obj = JSON.parse(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
@@ -193,7 +194,7 @@
                 <canvas id="myChart"></canvas>
             </div>
             <script>
-                var ctx = document.getElementById("myChart");
+            var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -265,7 +266,7 @@
             </div>
         </div>
         <script>
-            window.onload = function() {
+        window.onload = function() {
                 $.get("data.json", function(data) {
                         console.log(data);
                     }
@@ -308,61 +309,25 @@
             </div>
         </div>
     </div>
-    <!--
+
+     <!--
                     ======================================
                                 page Magnetometre
                     ======================================
         -->
-    <div data-role="page" id="pageMagnetometre" data-theme="b">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
-            <div>
-                <a href="https://cnes.fr/fr/" target="_blank"><img id="imgCnes" src="images/cnes.png" /></a>
+        <div data-role="page" id="pageMagnetometre" data-theme="b">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+                <div>
+                    <a href="https://cnes.fr/fr/" target="_blank"><img id="imgCnes" src="images/cnes.png" /></a>
+                </div>
             </div>
-        </div>
-        <script>
+            <script>
             window.onload = function() {
                     $.get("data.json", function(data) {
                             console.log(data);
                         }
                     }
             </script>
-        <ul id="menu">
-            <li><a href="#">Instrument</a>
-                <ul>
-                    <li><a href="#pageCubesat">CubeSat</a></li>
-                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
-                    <li><a href="#pageCamera">Caméra</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div style="text-align: center;">
-            <img src="./images/imgMagneto.png" width="500" height="350" />
-        </div>
-        <div id="donnesMagneto">
-            <table>
-                <tr>
-                    <th><mark>Valeur BX (μT) : </mark></th>
-                    <td id="ValeurMagnetoBX"></td>
-                </tr>
-                <tr>
-                    <th><mark>Valeur BY (μT) : </mark></th>
-                    <td id="ValeurMagnetoBY"></td>
-                </tr>
-                <tr>
-                    <th><mark>Valeur BZ (μT) : </mark></th>
-                    <td id="ValeurMagnetoBZ"></td>
-                </tr>
-            </table>
-        </div>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
-            <div data-role="navbar" data-grid="" data-iconpos="left">
-                <ul>
-                    <li><a href="#pageAbout">About</a></li>
-                    <li><a href="#page1">Etat</a></li>
-                    <li><a href="#page2">Synoptique</a></li>
-                    <li><a href="#page3">Commande</a></li>
-                    <li><a href="#page4">Matrice</a></li>
-                </ul>
             <ul id="menu">
                 <li><a href="#">Instrument</a>
                     <ul>
@@ -401,6 +366,19 @@
                         <li><a href="#page4">Matrice</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <!--
+                    ======================================
+                                page Camera
+                    ======================================
+        -->
+        <div data-role="page" id="pageCamera" data-theme="b">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+                <div>
+                    <a href="https://cnes.fr/fr/" target="_blank"><img id="imgCnes" src="images/cnes.png" /></a>
+                </div>
+            </div>
             <ul id="menu">
                 <li><a href="#">Instrument</a>
                     <ul>
@@ -410,25 +388,43 @@
                     </ul>
                 </li>
             </ul>
-            <div style="text-align: center;">
-                <img src="./images/imgMagneto.png" width="500" height="350" />
+            <div id="slideshow">
+                <div>
+                    <img src="./images/Magnetometre.png" width="400" height="300">
+                </div>
+                <div>
+                    <img src="./images/ihm_camera.jpg" width="300" height="260">
+                </div>
+                <div>
+                    <img src="./images/imgMagneto.png" width="300" height="260">
+                </div>
             </div>
-            
-           <table>
+            <script>
+            $("#slideshow > div:gt(0)").hide();
+
+            setInterval(function() {
+                $('#slideshow > div:first')
+                    .fadeOut(1000)
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo('#slideshow');
+            }, 3000);
+            </script>
+
+            <table>
            <tr>
-                <th><mark>Valeur BX (μT) : </mark></th>
-                <td id="ValeurMagnetoBX"></td>
+                <th><mark>Info Caméra : </mark></th>
+                <td id="InfoCamera1"></td>
            </tr>
            <tr>
-                <th><mark>Valeur BY (μT) : </mark></th>
-                <td id="ValeurMagnetoBY"></td>
-           </tr>
-           <tr>
-                <th><mark>Valeur BZ (μT) : </mark></th>
-                <td id="ValeurMagnetoBZ"></td>
+                <th><mark>Info Caméra : </mark></th>
+                <td id="InfoCamera2"></td>
            </tr>
         </table>
-       
+
+
+
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
@@ -441,126 +437,59 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!--
-                    ======================================
-                                page Camera
-                    ======================================
-        -->
-    <div data-role="page" id="pageCamera" data-theme="b">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
-            <div>
-                <a href="https://cnes.fr/fr/" target="_blank"><img id="imgCnes" src="images/cnes.png" /></a>
-            </div>
-        </div>
-        <ul id="menu">
-            <li><a href="#">Instrument</a>
-                <ul>
-                    <li><a href="#pageCubesat">CubeSat</a></li>
-                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
-                    <li><a href="#pageCamera">Caméra</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div id="slideshow">
-            <div>
-                <img src="./images/Magnetometre.png" width="400" height="300">
-            </div>
-            <div>
-                <img src="./images/ihm_camera.jpg" width="300" height="260">
-            </div>
-            <div>
-                <img src="./images/imgMagneto.png" width="300" height="260">
-            </div>
-        </div>
-        <script>
-            $("#slideshow > div:gt(0)").hide();
-
-            setInterval(function() {
-                $('#slideshow > div:first')
-                    .fadeOut(1000)
-                    .next()
-                    .fadeIn(1000)
-                    .end()
-                    .appendTo('#slideshow');
-            }, 3000);
-            </script>
-        <table>
-            <tr>
-                <th><mark>Info Caméra : </mark></th>
-                <td id="InfoCamera1"></td>
-            </tr>
-            <tr>
-                <th><mark>Info Caméra : </mark></th>
-                <td id="InfoCamera2"></td>
-            </tr>
-        </table>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
-            <div data-role="navbar" data-grid="" data-iconpos="left">
-                <ul>
-                    <li><a href="#pageAbout">About</a></li>
-                    <li><a href="#page1">Etat</a></li>
-                    <li><a href="#page2">Synoptique</a></li>
-                    <li><a href="#page3">Commande</a></li>
-                    <li><a href="#page4">Matrice</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--
+        <!--
             ======================================
                         page Cubesat
             ======================================
         -->
-    <div data-role="page" id="pageCubesat" data-theme="b">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
-            <div>
-                <img id="imgCnes" src="images/cnes.png" /></a>
+        <div data-role="page" id="pageCubesat" data-theme="b">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+                <div>
+                    <img id="imgCnes" src="images/cnes.png" /></a>
+                </div>
+            </div>
+            <ul id="menu">
+                <li><a href="#">Instrument</a>
+                    <ul>
+                        <li><a href="#pageCubesat">CubeSat</a></li>
+                        <li><a href="#pageMagnetometre">Magnétomètre</a></li>
+                        <li><a href="#pageCamera">Caméra</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div data-role="main" class="ui-responsive ui-shadow">
+                <div id="legende">
+                    <p><mark>Température Systeme : rouge</mark></p>
+                    <p><mark>Température Processeur : vert</mark></p>
+                    <p><mark>Température Batterie: jaune </mark></p>
+                    <p><mark>Température Caméra : cyan </mark></p>
+                </div>
+                <div id="synoptique">
+                    <div id="Temperature"></div>
+                    <div id="Temperature1"></div>
+                    <div id="Temperature2"></div>
+                    <div id="Temperature3"></div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+                <div data-role="navbar" data-grid="" data-iconpos="left">
+                    <ul>
+                        <li><a href="#pageAbout">About</a></li>
+                        <li><a href="#page1">Etat</a></li>
+                        <li><a href="#page2">Synoptique</a></li>
+                        <li><a href="#page3">Commande</a></li>
+                        <li><a href="#page4">Matrice</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <ul id="menu">
-            <li><a href="#">Instrument</a>
-                <ul>
-                    <li><a href="#pageCubesat">CubeSat</a></li>
-                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
-                    <li><a href="#pageCamera">Caméra</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div data-role="main" class="ui-responsive ui-shadow">
-            <div id="legende">
-                <p><mark>Température Systeme : rouge</mark></p>
-                <p><mark>Température Processeur : vert</mark></p>
-                <p><mark>Température Batterie: jaune </mark></p>
-                <p><mark>Température Caméra : cyan </mark></p>
-            </div>
-            <div id="synoptique">
-                <div id="Temperature"></div>
-                <div id="Temperature1"></div>
-                <div id="Temperature2"></div>
-                <div id="Temperature3"></div>
-            </div>
-        </div>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
-            <div data-role="navbar" data-grid="" data-iconpos="left">
-                <ul>
-                    <li><a href="#pageAbout">About</a></li>
-                    <li><a href="#page1">Etat</a></li>
-                    <li><a href="#page2">Synoptique</a></li>
-                    <li><a href="#page3">Commande</a></li>
-                    <li><a href="#page4">Matrice</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <!--
             ======================================
                         page Commande
             ======================================
         -->
-
-    <head>
-        <script>
+    <head>        
+	<script>
             $( function() {
                 $( "#datepicker" ).datepicker();
                 } );
@@ -644,20 +573,21 @@
                             <th data-priority="2">Moyenne des mesures en °C</th>
                         </tr>
                     </thead>
-                    <tbody id="block1Matrice">
+                    <tbody>
                         <tr>
                             <td>Camera Thermique</td>
                             <td id="temp"></td>
-                        </tr>
-                    </tbody>
+                            <td>
                 </table>
+                </td>
+                </tbody>
                 <table id="matrice">
                     <thead>
                         <tr>
                             <th id="entete" COLSPAN=8>MATRICE</th>
                         </tr>
                     </thead>
-                    <tbody id="block2Matrice">
+                    <tbody>
                         <tr id="ligne1">
                             <td id="pixel0"></td>
                             <td id="pixel1"></td>
@@ -753,6 +683,7 @@
                 </div>
             </div>
         </div>
+       
 </body>
 
 </html>
