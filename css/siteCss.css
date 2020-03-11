@@ -63,7 +63,46 @@ padding-top:80%;
 background-size: contain;
 background-repeat:no-repeat;
 }
+p{
+    margin: 10px;
+    font: 1rem 'Fira Sans', sans-serif;
+}
 
+input {
+    margin: .4rem;
+}
+#legende {
+padding:0;
+text-align: center;
+top:1%
+left:1%
+position:absolute;
+/*font-size: 1vw;*/
+}
+mark {
+    background-color: grey;
+    color:white;
+}
+#donnesMagneto {
+    font:Verdana, Geneva, sans-serif;
+
+    font-size:18px;
+    text-align:left;
+    height:50px;
+    position: absolute;
+    bottom: 50%;
+}
+
+
+#donnesCamera {
+
+   font:Verdana, Geneva, sans-serif;
+    font-size:18px;
+    text-align:left;
+    height:50px;
+    position: absolute;
+    bottom: 50%;
+}
 #Temperature {
 background-color:#4d4948;
 color:red;
