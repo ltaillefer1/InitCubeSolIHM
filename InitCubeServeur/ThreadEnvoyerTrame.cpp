@@ -84,12 +84,11 @@ void* ThreadEnvoyerTrame(void *){
 				//Ouverture de l'objet camera
 			<<"\"camera\" : { "
 
-				<<"\"InfoCamera1\":"
-            	<<rand()%101<<","
+				<<"\"InfoCamera1\" : "<<rand()%101<<","
 
             	//Caméra
-            	<<"\"InfoCamera2\":"
-            	<<rand()%101<<"},"
+            	<<"\"InfoCamera2\" : "<<rand()%101
+            	<<"},"
 
 			//température0
 			<< "\"temp\":"
