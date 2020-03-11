@@ -69,8 +69,6 @@ void* ThreadEnvoyerTrame(void *){
 			//Ouverture de l'objet magneto dans le JSON
 			<<"\"magneto\" : {"
 
-				
-
 				//Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
 				//Magnetomètre
             <<"\"ValeurMagnetoBX\":"
