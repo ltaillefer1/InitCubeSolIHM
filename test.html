@@ -6,7 +6,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" href="css/siteCss.css">
-    <link rel="stylesheet" href="css/etat.css">
+    <!--<link rel="stylesheet" href="css/etat.css">
+    <!--<link rel="stylesheet" href="css/V1.css>-->
+       
     <link href="css/jquery-ui.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script src="/node_modules/chart.js/dist/Chart.bundle.js"></script>
@@ -341,14 +343,22 @@
                 <img src="./images/imgMagneto.png" width="500" height="350" />
             </div>
             <div id="donnesMagneto">
-                <p><mark>Valeur BX (μT) : </mark></p>
-                <div id="ValeurMagnetoBX"></div>
-                <p><mark>Valeur BY (μT) : </mark></p>
-                <div id="ValeurMagnetoBY"></div>
-                <p><mark>Valeur BZ (μT) : </mark></p>
-                <div id="ValeurMagnetoBZ"></div>
-            </div>
-            
+            <thead>
+                <tr>
+                    <th><mark>Valeur BX (μT) : </mark></th>
+                    <th><mark>Valeur BY (μT) : </mark></th>
+                    <th><mark>Valeur BZ (μT) : </mark></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td id="ValeurMagnetoBX"></td>
+                    <td id="ValeurMagnetoBY"></td>
+                    <td id="ValeurMagnetoBZ"></td>
+                </tr>
+            </tbody>
+        </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
@@ -404,12 +414,21 @@
                     .appendTo('#slideshow');
             }, 3000);
             </script>
-            <div id="donnesCamera">
-                <p><mark>Info Caméra : </mark></p>
-                <div id="InfoCamera1"></div>
-                <p><mark>Info Caméra : </mark></p>
-                <div id="InfoCamera2"></div>
-            </div>
+
+            <table>
+
+           <tr>
+                <th><mark>Info Caméra : </mark></th>
+                <td id="InfoCamera1"></td>
+           </tr>
+           <tr>
+                <th><mark>Info Caméra : </mark></th>
+                <td id="InfoCamera2"></td>
+           </tr>
+        </table>
+
+
+
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
@@ -473,13 +492,8 @@
                         page 3 
             ======================================
         -->
-
-    <head>
-        <link href="css/jquery-ui.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="js/fonction.js"></script>
-        <script>
+    <head>        
+	<script>
             $( function() {
                 $( "#datepicker" ).datepicker();
                 } );
