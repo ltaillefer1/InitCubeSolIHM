@@ -112,6 +112,10 @@ font-size:2vw;
     right:65%;
 }
 
+#matrice {
+  border : 1px solid;
+}
+
 
 h1{ color: #005191; font : ARIAL REGULAR, sans-serif, font-weight:bold;
 }
