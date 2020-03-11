@@ -341,14 +341,22 @@
                 <img src="./images/imgMagneto.png" width="500" height="350" />
             </div>
             <div id="donnesMagneto">
-                <p><mark>Valeur BX (μT) : </mark></p>
-                <div id="ValeurMagnetoBX"></div>
-                <p><mark>Valeur BY (μT) : </mark></p>
-                <div id="ValeurMagnetoBY"></div>
-                <p><mark>Valeur BZ (μT) : </mark></p>
-                <div id="ValeurMagnetoBZ"></div>
-            </div>
-            
+            <thead>
+                <tr>
+                    <th><mark>Valeur BX (μT) : </mark></th>
+                    <th><mark>Valeur BY (μT) : </mark></th>
+                    <th><mark>Valeur BZ (μT) : </mark></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td id="ValeurMagnetoBX"></td>
+                    <td id="ValeurMagnetoBY"></td>
+                    <td id="ValeurMagnetoBZ"></td>
+                </tr>
+            </tbody>
+        </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
@@ -404,12 +412,21 @@
                     .appendTo('#slideshow');
             }, 3000);
             </script>
-            <div id="donnesCamera">
-                <p><mark>Info Caméra : </mark></p>
-                <td id="InfoCamera1"></td>
-                <p><mark>Info Caméra : </mark></p>
-                <td id="InfoCamera2"></td>
-            </div>
+
+            <thead>
+                <tr>
+                    <th><mark>Info Caméra : </mark></th>
+                    <th><mark>Info Caméra : </mark></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td id="InfoCamera1"></td>
+                    <td id="InfoCamera2"></td>
+                </tr>
+            </tbody>
+
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
