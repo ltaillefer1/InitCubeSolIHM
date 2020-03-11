@@ -87,6 +87,29 @@ void* ThreadEnvoyerTrame(void *){
 			//camera
 			<<"\"camera\":"
 			<<rand()%2
+
+			srand((unsigned)time(NULL));
+            int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
+
+            //Magnetomètre
+            <<"\"ValeurMagnetoBX\":"
+            <<nombre_aleatoire<<","
+
+            //Magnetomètre
+            <<"\"ValeurMagnetoBY\":"
+            <<nombre_aleatoire<<","
+
+            //Magnetomètre
+            <<"\"ValeurMagnetoBZ\":"
+            <<nombre_aleatoire<<","
+
+            //Caméra
+            <<"\"InfoCamera1\":"
+            <<rand()%101<<","
+
+            //Caméra
+            <<"\"InfoCamera2\":"
+            <<rand()%101<<","
 				
 			<< "}"<<endl;
 			
