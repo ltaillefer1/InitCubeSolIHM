@@ -61,12 +61,9 @@ padding-top:80%;
 background-size: contain;
 background-repeat:no-repeat;
 }
-p,
-label {
-    font: 1rem 'Fira Sans', sans-serif;
-}
 p{
-    margin: 50px;
+    margin: 10px;
+    font: 1rem 'Fira Sans', sans-serif;
 }
 
 input {
@@ -74,7 +71,7 @@ input {
 }
 #legende {
 padding:0;
-margin:0;
+margin:100px;
 top:10%
 left:10%
 position:absolute;
