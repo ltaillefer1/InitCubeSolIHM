@@ -24,6 +24,8 @@ void* ThreadConnexion(void *){
 void* ThreadEnvoyerTrame(void *){
 	int value =10;
 	ostringstream flux;
+	srand((unsigned)time(NULL));
+	int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
 
 	while(1){
 
@@ -65,8 +67,7 @@ void* ThreadEnvoyerTrame(void *){
 			//Ouverture de l'objet magneto dans le JSON
 			<<"\"magneto\" : {"
 
-				srand((unsigned)time(NULL));
-            	int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
+				
 
 				//Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
 				//Magnetomètre
@@ -111,7 +112,7 @@ void* ThreadEnvoyerTrame(void *){
 			<<rand()%61<<","
 
 			//camera
-			<<"\"camera\":"
+			<<"\"cameraIR\":"
 			<<rand()%2
 
      << "}"<<endl;
