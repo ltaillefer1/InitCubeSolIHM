@@ -71,9 +71,9 @@ input {
 }
 #legende {
 padding:0;
-margin:200px;
-top:10%
-left:10%
+text-align: center;
+top:1%
+left:1%
 position:absolute;
 /*font-size: 1vw;*/
 }
