@@ -21,7 +21,7 @@
 
 <body>
     <script>
-    var source = new EventSource("/cgi-bin/CubeEventServer.cgi");
+    var source = new EventSource("cgi-bin/CubeEventServer.cgi");
     source.onmessage = function(event) {
         var obj = JSON.parse(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
