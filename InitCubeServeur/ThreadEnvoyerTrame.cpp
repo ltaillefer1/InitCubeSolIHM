@@ -26,6 +26,8 @@ void* ThreadEnvoyerTrame(void *){
 	ostringstream flux;
 	srand((unsigned)time(NULL));
 	int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int nombre_aleatoire1=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int nombre_aleatoire2=(rand() % (4800 - (-4800) + 1)) - 4800;
 
 	while(1){
 
@@ -76,11 +78,11 @@ void* ThreadEnvoyerTrame(void *){
 
             //Magnetomètre
             <<"\"ValeurMagnetoBY\":"
-            <<nombre_aleatoire<<","
+            <<nombre_aleatoire1<<","
 
             //Magnetomètre
             <<"\"ValeurMagnetoBZ\":"
-            <<nombre_aleatoire<<"},"
+            <<nombre_aleatoire2<<"},"
 
 				//Ouverture de l'objet camera
 			<<"\"camera\" : { "
