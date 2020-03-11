@@ -25,9 +25,9 @@ void* ThreadEnvoyerTrame(void *){
 	int value =10;
 	ostringstream flux;
 	srand((unsigned)time(NULL));
-	int nombre_aleatoire=(rand() % (4800 - (-4800) + 1)) - 4800;
-	int nombre_aleatoire1=(rand() % (4800 - (-4800) + 1)) - 4800;
-	int nombre_aleatoire2=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int premiereValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int deuxiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 
 	while(1){
 
@@ -74,15 +74,15 @@ void* ThreadEnvoyerTrame(void *){
 				//Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
 				//Magnetomètre
             <<"\"ValeurMagnetoBX\":"
-            <<nombre_aleatoire<<","
+            <<premiereValeurMagneto<<","
 
             //Magnetomètre
             <<"\"ValeurMagnetoBY\":"
-            <<nombre_aleatoire1<<","
+            <<deuxiemeValeurMagneto<<","
 
             //Magnetomètre
             <<"\"ValeurMagnetoBZ\":"
-            <<nombre_aleatoire2<<"},"
+            <<troisiemeValeurMagneto<<"},"
 
 				//Ouverture de l'objet camera
 			<<"\"camera\" : { "
