@@ -34,21 +34,21 @@
         document.getElementById("StockLibre%").innerHTML = obj.stockage.stockLibreEnP + " %";
         document.getElementById("StockLibreMo").innerHTML = obj.stockage.stockLibreMo + " Mo";
 
-        document.getElementById("ValeurMagnetoBX").innerHTML = obj.ValeurMagnetoBX + " μT";
-        document.getElementById("ValeurMagnetoBY").innerHTML = obj.ValeurMagnetoBY + " μT";
-        document.getElementById("ValeurMagnetoBZ").innerHTML = obj.ValeurMagnetoBZ + " μT";
-        document.getElementById("InfoCamera1").innerHTML = obj.InfoCamera1;
-        document.getElementById("InfoCamera2").innerHTML = obj.InfoCamera2;
+        document.getElementById("ValeurMagnetoBX").innerHTML = obj.magneto.ValeurMagnetoBX + " μT";
+        document.getElementById("ValeurMagnetoBY").innerHTML = obj.magneto.ValeurMagnetoBY + " μT";
+        document.getElementById("ValeurMagnetoBZ").innerHTML = obj.magneto.ValeurMagnetoBZ + " μT";
+        document.getElementById("InfoCamera1").innerHTML = obj.camera.InfoCamera1;
+        document.getElementById("InfoCamera2").innerHTML = obj.camera.InfoCamera2;
 
         document.getElementById("Temperature").innerHTML = obj.temp + " °C";
         document.getElementById("Temperature1").innerHTML = obj.temp1 + " °C";
         document.getElementById("Temperature2").innerHTML = obj.temp2 + " °C";
         document.getElementById("Temperature3").innerHTML = obj.temp3 + " °C";
 
-        if (obj.camera == 0) {
-            document.getElementById("Camera").innerHTML = "OFF";
+        if (obj.cameraIR == 0) {
+            document.getElementById("CameraIR").innerHTML = "OFF";
         } else {
-            document.getElementById("Camera").innerHTML = "ON";
+            document.getElementById("CameraIR").innerHTML = "ON";
         }
 
         for (var i = 0; i < 10; i++) {
@@ -343,14 +343,22 @@
                 <img src="./images/imgMagneto.png" width="500" height="350" />
             </div>
             <div id="donnesMagneto">
-                <p><mark>Valeur BX (μT) : </mark></p>
-                <div id="ValeurMagnetoBX"></div>
-                <p><mark>Valeur BY (μT) : </mark></p>
-                <div id="ValeurMagnetoBY"></div>
-                <p><mark>Valeur BZ (μT) : </mark></p>
-                <div id="ValeurMagnetoBZ"></div>
-            </div>
-            
+            <thead>
+                <tr>
+                    <th><mark>Valeur BX (μT) : </mark></th>
+                    <th><mark>Valeur BY (μT) : </mark></th>
+                    <th><mark>Valeur BZ (μT) : </mark></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td id="ValeurMagnetoBX"></td>
+                    <td id="ValeurMagnetoBY"></td>
+                    <td id="ValeurMagnetoBZ"></td>
+                </tr>
+            </tbody>
+        </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
@@ -406,12 +414,21 @@
                     .appendTo('#slideshow');
             }, 3000);
             </script>
-            <div id="donnesCamera">
-                <p><mark>Info Caméra : </mark></p>
-                <div id="InfoCamera1"></div>
-                <p><mark>Info Caméra : </mark></p>
-                <div id="InfoCamera2"></div>
-            </div>
+
+            <table>
+
+           <tr>
+                <th id="donnesCamera"><mark>Info Caméra : </mark></th>
+                <td id="InfoCamera1"></td>
+           </tr>
+           <tr>
+                <th id="donnesCamera"><mark>Info Caméra : </mark></th>
+                <td id="InfoCamera2"></td>
+           </tr>
+        </table>
+
+
+
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
                 <div data-role="navbar" data-grid="" data-iconpos="left">
                     <ul>
