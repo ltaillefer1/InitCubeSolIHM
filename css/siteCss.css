@@ -294,8 +294,7 @@ td#pixel0,#pixel1,#pixel2,#pixel3,#pixel4,#pixel5,#pixel6,#pixel7,#pixel8,#pixel
 }
 
 th#entete
-{
- 
+{ 
  background-color: white;
  border: 5px solid black;
  width:50px;
