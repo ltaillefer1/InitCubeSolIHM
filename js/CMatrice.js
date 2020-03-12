@@ -39,7 +39,7 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 	G = this.map(valeur, 255, 0, this.seuilMilieu, this.seuilBas);
 	B = this.map(valeur, 255, 0, this.seuilBas, this.seuilNull);
 
-	var couleur = '#'+('0'+R.toString(16)).slice(-2)+"00"+('0'+B.toString(16)).slice(-2)+"00"+('0'+G.toString(16)).slice(-2);
+	var couleur = '#'+('0'+R.toString(16)).slice(-2)+"00"+('0'+G.toString(16)).slice(-2)+"00"+('0'+B.toString(16)).slice(-2)+"00";
 
 	$("#pixel"+pixel).css("background-color",couleur);
 }
@@ -96,7 +96,7 @@ CMatrice.prototype.setPixelColor = function(pixel,valeur) {
 		{
 			var valeur = this.camera.getPixel(numPixel);
 			//getPixel=retourne valeur pixel ciblé
-			matrice.setPixelColor(numPixel,valeur);
+			matrice.modifPixelColor(numPixel,valeur);	
 			//setPixelColor=défini couleur en fonction valeur de getPixel
 		}
 	}
