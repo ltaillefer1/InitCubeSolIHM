@@ -96,7 +96,7 @@ CMatrice.prototype.setPixelColor = function(pixel,valeur) {
 		{
 			var valeur = this.camera.getPixel(numPixel);
 			//getPixel=retourne valeur pixel ciblé
-			matrice.modifPixelColor(numPixel,valeur);
+			matrice.setPixelColor(numPixel,valeur);
 			//setPixelColor=défini couleur en fonction valeur de getPixel
 		}
 	}
@@ -107,7 +107,7 @@ CMatrice.prototype.setPixelColor = function(pixel,valeur) {
 		{
 			var valeur = this.camera.ExGetPixel(numPixel);
 			//getPixel=retourne valeur pixel ciblé
-			matrice.modifPixelColor(numPixel,valeur);
+			matrice.setPixelColor(numPixel,valeur);
 			//setPixelColor=défini couleur en fonction valeur de getPixel
 		}
 	}
@@ -117,7 +117,7 @@ CMatrice.prototype.setPixelColor = function(pixel,valeur) {
 		{
 			var valeur = this.camera.HotGetPixel(numPixel);
 			//getPixel=retourne valeur pixel ciblé
-			matrice.modifPixelColor(numPixel,valeur);
+			matrice.setPixelColor(numPixel,valeur);
 			//setPixelColor=défini couleur en fonction valeur de getPixel
 		}
 	}
@@ -127,7 +127,7 @@ CMatrice.prototype.setPixelColor = function(pixel,valeur) {
 		{
 			var valeur = this.camera.ColdGetPixel(numPixel);
 			//getPixel=retourne valeur pixel ciblé
-			matrice.modifPixelColor(numPixel,valeur);
+			matrice.setPixelColor(numPixel,valeur);
 			//setPixelColor=défini couleur en fonction valeur de getPixel
 		}
 	}
