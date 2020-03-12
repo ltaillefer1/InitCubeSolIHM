@@ -11,6 +11,21 @@ function CMatrice(camera){
 	
 }
 
+CMatrice.prototype.rgbToHex = function (rgb) { 
+  var hex = Number(rgb).toString(16);
+  if (hex.length < 2) {
+       hex = "0" + hex;
+  }
+  return hex;
+};
+
+CMatrice.prototype.fullColorHex = function(r,g,b) {   
+  var red = this.rgbToHex(r);
+  var green = this.rgbToHex(g);
+  var blue = this.rgbToHex(b);
+  return red+green+blue;
+};
+
 CMatrice.prototype.constrain = function(n, low, high) {
   return Math.max(Math.min(n, high), low);
 };
@@ -31,17 +46,19 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 	$("#pixel"+pixel).css("color","white");
 	$("#pixel"+pixel).html(valeur);
 
-	var R;
-	var G;
-	var B;
+	var r;
+	var g;
+	var b;
 
 	var temperature = parseFloat(valeur)
 
-	R = this.map(temperature, 255, 0, this.seuilHaut, this.seuilMilieu);
-	G = this.map(temperature, 255, 0, this.seuilMilieu, this.seuilBas);
-	B = this.map(temperature, 255, 0, this.seuilBas, this.seuilNull);
+	r = this.map(temperature, 255, 0, this.seuilHaut, this.seuilMilieu);
+	g = this.map(temperature, 255, 0, this.seuilMilieu, this.seuilBas);
+	b = this.map(temperature, 255, 0, this.seuilBas, this.seuilNull);
 
-	var couleur = '#'+('0'+R.toString(16)).slice(-2)+"00"+('0'+G.toString(16)).slice(-2)+"00"+('0'+B.toString(16)).slice(-2);
+
+
+	var couleur = this.fullColorHex(r,g,b);
 
 	$("#pixel"+pixel).css("background-color",couleur);
 }
