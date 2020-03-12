@@ -35,11 +35,13 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 	var G;
 	var B;
 
-	R = this.map(valeur, 255, 0, this.seuilHaut, this.seuilMilieu);
-	G = this.map(valeur, 255, 0, this.seuilMilieu, this.seuilBas);
-	B = this.map(valeur, 255, 0, this.seuilBas, this.seuilNull);
+	var temperature = parseFloat(valeur)
 
-	var couleur = '#'+('0'+R.toString(16)).slice(-2)+"00"+('0'+G.toString(16)).slice(-2)+"00"+('0'+B.toString(16)).slice(-2)+"00";
+	R = this.map(temperature, 255, 0, this.seuilHaut, this.seuilMilieu);
+	G = this.map(temperature, 255, 0, this.seuilMilieu, this.seuilBas);
+	B = this.map(temperature, 255, 0, this.seuilBas, this.seuilNull);
+
+	var couleur = '#'+('0'+R.toString(16)).slice(-2)+"00"+('0'+G.toString(16)).slice(-2)+"00"+('0'+B.toString(16)).slice(-2);
 
 	$("#pixel"+pixel).css("background-color",couleur);
 }
