@@ -12,7 +12,6 @@
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/CMatrice.js"></script>
     <script type="text/javascript" src="js/CCamera.js"></script>
     <script type="text/javascript" src="js/initcube.js"></script>
     <script type="text/javascript" src="js/fonction.js"></script>
@@ -73,7 +72,6 @@
             <div>
                 <img id="imgCnes" src="images/cnes.png" />
                 <h1 class="anim-title screen-big">CUBSAT: Projet 2020-2021</h1>
-                <!--<img id="imgJanus" src="images/index.png"/>-->
             </div>
         </div>
         <style media="" data-href="style.css">*{position:relative;box-sizing:border-box;margin:0;padding:0;border:0;}
@@ -192,7 +190,7 @@
             <div id="line">
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
-            <script type="text/javascript" src="js/courbe.js"></script>            
+            <script type="text/javascript" src="js/courbe.js"></script>
         </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
             <div data-role="navbar" data-grid="" data-iconpos="left">
@@ -526,16 +524,16 @@
                         <tr>
                             <td>Camera Thermique</td>
                             <td id="temp"></td>
-                            <td>
+                        </tr>
+                    </tbody>
                 </table>
-                </td>
-                </tbody>
                 <table id="matrice">
                     <thead>
                         <tr>
                             <th id="entete" COLSPAN=8>MATRICE</th>
                         </tr>
                     </thead>
+                    <script type="text/javascript" src="js/CMatrice.js"></script>
                     <tbody>
                         <tr id="ligne1">
                             <td id="pixel0"></td>
