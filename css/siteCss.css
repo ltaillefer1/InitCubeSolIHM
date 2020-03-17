@@ -49,11 +49,6 @@ height: 300px;}
 .ui-btn {font-size: 20px; box-shadow: 1px 1px 8px #333;} /* ombre portée */
 
 /* ----------------------- Zone de l'entête ----------------------- */
-#imgJanus { top : 6px; left :660px; width:80px ;height:50px; }
-<!--#imgCnes { top : 6px; left : 20px; }-->
-#lblTitre { top : 2px; left : 380px; font-size: 30px;  position: fixed;}
-#imgAcToulouse { top : 2px; left : 250px; }
-#imgCubeSat { top : 2px; left : 400px; width: 200px ;height: 62px;}
 #imgCnes { top : 6px; left : 20px; width: 240px ;height:60px }
 
 /* ----------------------- Zone Synoptique ----------------------- */
@@ -76,8 +71,8 @@ input {
 #legende {
 padding:0;
 text-align: center;
-top:1%
-left:1%
+top:1%;
+left:1%;
 position:absolute;
 /*font-size: 1vw;*/
 }
