@@ -20,7 +20,7 @@
 
 <body>
     <script>
-    var source = new EventSource("cgi-bin/CubeEventServer.cgi");
+        var source = new EventSource("cgi-bin/CubeEventServer.cgi");
     source.onmessage = function(event) {
         var obj = JSON.parse(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
@@ -187,7 +187,9 @@
                 </tbody>
             </table>
             <br /><br /><br />
-            <canvas id="myChart"></canvas>
+            <div id="line">
+                <canvas id="myChart"></canvas>
+            </div>
             <script>
             var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
@@ -232,6 +234,9 @@
                 }
             });
             </script>
+            <div id="line">
+                    <canvas id="myChart1"></canvas>
+                </div>
         </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
             <div data-role="navbar" data-grid="" data-iconpos="left">
