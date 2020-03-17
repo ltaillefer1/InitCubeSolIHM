@@ -50,7 +50,7 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 	var g;
 	var b;
 
-	var temperature = parseFloat(valeur)
+	var temperature = parseFloat(valeur);
 
 	r = this.map(temperature, 255, 0, this.seuilHaut, this.seuilMilieu);
 	g = this.map(temperature, 255, 0, this.seuilMilieu, this.seuilBas);
@@ -59,6 +59,7 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 
 
 	var couleur = this.fullColorHex(r,g,b);
+	console.log(couleur);
 
 	$("#pixel"+pixel).css("background-color",couleur);
 }
