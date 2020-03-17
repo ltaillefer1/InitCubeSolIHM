@@ -59,7 +59,6 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 
 
 	var couleur = this.fullColorHex(r,g,b);
-	console.log(couleur);
 
 	$("#pixel"+pixel).css("background-color",couleur);
 }
