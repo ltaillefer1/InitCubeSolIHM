@@ -187,9 +187,9 @@
                 </tbody>
             </table>
             <br /><br /><br />
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart"></canvas>
             <script type="text/javascript">
-            var ctx = document.getElementById('myChart').getContext('2d');
+            var ctx = document.getElementById('myChart');
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -220,7 +220,6 @@
                         borderWidth: 2,
                         borderColor: ['white'],
                     }]
-
                 },
                 options: {
                     scales: {
