@@ -52,9 +52,9 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 
 	var temperature = parseFloat(valeur);
 
-	r = this.map(temperature, 255, 0, this.seuilHaut, this.seuilMilieu);
-	g = this.map(temperature, 255, 0, this.seuilMilieu, this.seuilBas);
-	b = this.map(temperature, 255, 0, this.seuilBas, this.seuilNull);
+	r = this.map(temperature, 0, 255, this.seuilHaut, this.seuilMilieu);
+	g = this.map(temperature, 0, 255, this.seuilMilieu, this.seuilBas);
+	b = this.map(temperature, 0, 255, this.seuilBas, this.seuilNull);
 
 
 
