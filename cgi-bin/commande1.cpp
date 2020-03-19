@@ -9,7 +9,7 @@
 #include <strings.h>
 #include "CubeCommandeServer.h"
 
-#define CHEMIN = "/tmp/InitCubeServeurReception"
+#define CHEMIN = "/var/www/InitCubeCommande"
 #define ADRESSE "127.0.0.1"
 #define PORT "9925"
 
