@@ -72,7 +72,7 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 	$("#pixel"+pixel).css("background-color",r,g,b);
 }
 
-CMatrice.prototypefunction.calcColor = function(x){
+CMatrice.prototype.calcColor = function(x){
  
     if (x >= 0 && x < 255) {
       r = 255;
