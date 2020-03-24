@@ -70,7 +70,7 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 
    /*document.getElementById("#pixel"+pixel).style.backgroundColor = rgb(r,g,b);*/ 
 	/*$("#pixel"+pixel).style.backgroundColor = rgb(r,g,b);*/
-	$("#pixel"+pixel).css("background-color : rgb(r,g,b)");
+	$("#pixel"+pixel).css("background-color" : rgb(r,g,b));
 }
 
 CMatrice.prototype.calcColor = function(x){
