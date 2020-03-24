@@ -68,9 +68,13 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
       b = xMax*6-x;
     }
 
-   /*document.getElementById("#pixel"+pixel).style.backgroundColor = rgb(r,g,b);*/ 
-	/*$("#pixel"+pixel).style.backgroundColor = rgb(r,g,b);*/
-	$("#pixel"+pixel).css("background-color" : rgb(r,g,b));
+    var couleur = this.rgb2hex(r,g,b);
+
+	$("#pixel"+pixel).css("background-color", couleur);
+}
+
+CMatrice.prototype.rgb2hex = function(r,g,b){
+	return '#'+('0'+r.toString(16)).slice(-2)+('0'+g.toString(16)).slice(-2)+('0'+b.toString(16)).slice(-2);
 }
 
 CMatrice.prototype.calcColor = function(x){
