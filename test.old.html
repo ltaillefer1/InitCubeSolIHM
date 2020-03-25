@@ -21,7 +21,7 @@
 <body>
     <script>
         var source = new EventSource("cgi-bin/CubeEventServer.cgi");
-    source.addEventListener("etat", function(event) {
+    source.onmessage = function(event) {
         var obj = JSON.parse(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
         document.getElementById("TensionSortie").innerHTML = obj.batterie.tension + " V";
@@ -60,7 +60,7 @@
         myChart.data.datasets[3].data[10] = obj.temp3;
         myChart.data.datasets[4].data[10] = obj.temp4;
         myChart.update();
-    })
+    }
     </script>
     <!-- 
             ======================================

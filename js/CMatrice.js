@@ -6,9 +6,7 @@ function CMatrice(camera){
     this.seuilHaut = 90;
  	this.seuilMilieu = 60;
     this.seuilBas = 30;
-    this.seuilNull = 0;
-    this
-   
+    this.seuilNull = 0;   
 	
 }
 
@@ -76,36 +74,6 @@ CMatrice.prototype.modifPixelColor = function(pixel, valeur){
 CMatrice.prototype.rgb2hex = function(r,g,b){
 	return '#'+('0'+r.toString(16)).slice(-2)+('0'+g.toString(16)).slice(-2)+('0'+b.toString(16)).slice(-2);
 }
-
-CMatrice.prototype.calcColor = function(x){
- 
-    if (x >= 0 && x < 255) {
-      r = 255;
-      g = x;
-      b = 0
-    } if (x >= 255 && x < xMax*2) {
-      r = xMax*2 - x;
-      g = 255;
-      b = 0;
-    } if (x >= xMax*2 && x < xMax*3){
-      r = 0;
-      g = 255;
-      b = x - xMax*2;
-    } if (x >= xMax*3 && x < xMax*4){
-      r = 0;
-      g = xMax*4 - x;
-      b = 255;
-    } if (x >= xMax*4 && x < xMax*5){
-      r = x - xMax*4;
-      g = 0;
-      b = 255;
-    } if (x >= xMax*5 && x <= xMax*6){
-      r = 255;
-      g = 0;
-      b = xMax*6-x;
-    }
-}
-
 
 
 /**
