@@ -37,4 +37,4 @@ function update() {
             matrice.show();
         });
     });
-}q<
+}

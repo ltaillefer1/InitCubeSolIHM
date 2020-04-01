@@ -35,26 +35,13 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: false
+                    beginAtZero: true
                 }
             }]
         },
         maintainAspectRatio: true
     }
 });
-for (var i = 0; i < 10; i++) {
-            myChart.data.datasets[0].data[i] = myChart.data.datasets[0].data[i + 1];
-            myChart.data.datasets[1].data[i] = myChart.data.datasets[1].data[i + 1];
-            myChart.data.datasets[2].data[i] = myChart.data.datasets[2].data[i + 1];
-            myChart.data.datasets[3].data[i] = myChart.data.datasets[3].data[i + 1];
-            myChart.data.datasets[4].data[i] = myChart.data.datasets[4].data[i + 1];
-        };
-        myChart.data.datasets[0].data[10] = obj.temp;
-        myChart.data.datasets[1].data[10] = obj.temp1;
-        myChart.data.datasets[2].data[10] = obj.temp2;
-        myChart.data.datasets[3].data[10] = obj.temp3;
-        myChart.data.datasets[4].data[10] = obj.temp4;
-        myChart.update();
 
 
 
