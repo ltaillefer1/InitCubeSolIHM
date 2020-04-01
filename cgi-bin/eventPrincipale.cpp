@@ -1,8 +1,7 @@
 #include "Lib.h"
 using namespace std;
 
-int min = 0;
-int max = 10;
+int newValue(int max, int min);
 
 int main(){
 
@@ -11,7 +10,9 @@ int main(){
 	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int number = 0;
 	int arr[64];
-	arr = newValue();
+	int min = 0;
+	int max = 10;
+	arr = newValue(max, min);
 
 	cout << "Content-Type: text/event-stream\r\n\r\n";
 	cout << "Cache-Control: no-cache\r\n\r\n";
@@ -23,7 +24,9 @@ int main(){
 			cout << "Event: mesure\r\n\r\n";
 			cout << "data : "<<endl;*/			
 	for (int i = 0; i < 10 ;i++){
-		arr = newValue();	
+		arr = newValue();
+		min += 10;
+		max += 10;	
 		cout << "event: matrice"<<"\n";
 		cout << "data : "<<"\"matrice\":[" << arr[0]<<","<< arr[1]<<","<< arr[2]<<","<< arr[3]<<","<< arr[4]<<","<< arr[5]<<","<< arr[6]<<","<< arr[7]<<","
 		<< arr[8]<<","<< arr[9]<<","<< arr[10]<<","<< arr[11]<<","<< arr[12]<<","<< arr[13]<<","<< arr[14]<<","<< arr[15]<<","
@@ -126,15 +129,13 @@ int main(){
 	return 0;		
 }
 
-int newValue(){
+int newValue(int max, int min){
 	int a[64];
 	if(max < 90){
 		for (int i = 0; i < 64; i++){
 			a[i] = number;
 			number = rand()%(max-min + 1) + min;
 		}
-	min += 10;
-	max += 10;
 	}else {
 		return a;
 	}
