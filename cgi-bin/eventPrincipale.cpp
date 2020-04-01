@@ -117,9 +117,8 @@ int main(){
 
 			//temperature4
 			<<"\"temp4\":"
-			<<rand()%61<<
-			<< "},"
-
+			<<rand()%61<<"},"
+ 
 		//cameraIR
 		<<"\"cameraIR\":"
 		<<rand()%2
