@@ -12,7 +12,7 @@ int main(){
 	int arr[64];
 	int min = 0;
 	int max = 10;
-	arr = newValue(max, min, arr);
+	arr = newValue(max, min, arr[]);
 
 	cout << "Content-Type: text/event-stream\r\n\r\n";
 	cout << "Cache-Control: no-cache\r\n\r\n";
@@ -33,7 +33,7 @@ int main(){
 		<< arr[40]<<","<< arr[41]<<","<< arr[42]<<","<< arr[43]<<","<< arr[44]<<","<< arr[45]<<","<< arr[46]<<","<< arr[47]<<","
 		<< arr[48]<<","<< arr[49]<<","<< arr[50]<<","<< arr[51]<<","<< arr[52]<<","<< arr[53]<<","<< arr[54]<<","<< arr[55]<<","
 		<< arr[56]<<","<< arr[57]<<","<< arr[58]<<","<< arr[59]<<","<< arr[60]<<","<< arr[61]<<","<< arr[62]<<","<< arr[63]<<"," << "]}"<<"\r\n\r\n";
-		arr = newValue(max, min, arr);
+		arr = newValue(max, min, arr[]);
 		min += 10;
 		max += 10;
 	}
@@ -137,6 +137,6 @@ int newValue(int max, int min, int a[]){
 			number = rand()%(max-min + 1) + min;
 		}
 	}else {
-		return a;
+		return a*;
 	}
 }
