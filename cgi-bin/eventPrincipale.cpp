@@ -7,9 +7,9 @@ int main(){
 	int deuxiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int number = 0;
-	int arr = [64];
+	int arr[64];
 	for (int i = 0; i < 64; i++){
-		arr[i] = number
+		arr[i] = number;
 		number++;
 	}
 
