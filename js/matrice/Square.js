@@ -15,7 +15,7 @@ class Square {
         rect(this.x, this.y, this.width, this.width);
         fill(0);
         textSize(20);
-        /*text(this.temp, this.x, this.y + 20);*/
+        text(this.temp, this.x, this.y + 20);
     }
 
     setSquareTemp(t) {

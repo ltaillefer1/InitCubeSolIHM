@@ -12,6 +12,7 @@ function setup() {
 
     camerA = new CCamera();
     matrice = new CMatrice2(camerA);
+    console.log(matrice.getArray());
 }
 
 function draw() {
