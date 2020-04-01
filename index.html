@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	    <meta charset="utf-8">
+	    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+	    <link rel="stylesheet" href="css/siteCssZ.css">
+	    <link href="css/jquery-ui.css" rel="stylesheet">
+	    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	    <script type="text/javascript" src="js/p5.js"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	    <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+	    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	    <script type="text/javascript" src="js/resizeGraphic.js"></script>
+	</head>
+
+	 <!-- 
+            ======================================
+                        Page Etat
+            ======================================
+        -->
+	<body>
+		<div data-role="page" id="pageEtat" class="general" data-theme="b">
+			<div data-role="header" class="general">
+				<img id="imgCnes" src="images/cnes.png" />	
+			</div>
+
+			<div class="general body">
+				<div id="bandeauInfoUtile">
+					<h2>Centre de contrôle des missions</h2>
+					<table id="tableEtat" class="ui-body-b ui-shadow">
+						<thead id="nomInfo">
+							<tr>
+		                        <th>Niveau de charge de la batterie</th>
+		                        <th>Tension en sortie</th>
+		                        <th>Courant en sortie</th>
+		                        <th>RAM utilisée en %</th>
+		                        <th>Ram disponible</th>
+		                        <th>Stockage libre en %</th>
+		                        <th>Stockage libre en Mo</th>
+		                    </tr>
+						</thead>
+						<tbody id="info">
+							<tr>
+		                        <td id="ChargeBatterie"></td>
+		                        <td id="TensionSortie"></td>
+		                        <td id="CourantSortie"></td>
+		                        <td id="RamUse%"></td>
+		                        <td id="RamDispo"></td>
+		                        <td id="StockLibre%"></td>
+		                        <td id="StockLibreMo"></td>
+		                    </tr>
+						</tbody>
+					</table>
+				</div>
+				<br /><br /><br />
+				<div id="graphique">
+					<canvas id="myChart"></canvas>
+					<script type="text/javascript" src="js/courbe.js"></script>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+	            <div data-role="navbar" data-grid="" data-iconpos="left">
+	                <ul>                    
+	                    <li><a href="#pageEtat">Etat</a></li>
+	                    <li><a href="#pageSynoptique">Synoptique</a></li>
+	                    <li><a href="#pageCommande">Commande</a></li>
+	                </ul>
+	            </div>
+	        </div>
+		</div>
+
+		<!-- 
+	            ======================================
+	                        Page Synoptique
+	            ======================================
+	        -->
+		
+		<div data-role="page" id="pageSynoptique" data-theme="b">
+			<div id="header" class="general">
+				<img id="imgCnes" src="images/cnes.png" />	
+			</div>
+
+			<div data-role="main" class="general body">
+				<ul id="navSyno">
+		            <li><a>Instrument</a>
+		                <ul>
+		                    <li><a href="#pageSynoptique">CubeSat</a></li>
+		                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
+		                    <li><a href="#pageCamera">Caméra</a></li>
+		                    <li><a href="#pageMatrice">Matrice</a></li>
+		                </ul>
+		            </li>
+	        	</ul>
+
+	        	<div id="schemaSyno">
+	        		<!-- <script type="text/javascript" src="js/schemaSyno/mainSchema.js"></script>
+	        		<script type="text/javascript" src="js/schemaSyno/Rectangle.js"></script> -->
+	        	</div>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+	            <div data-role="navbar" data-grid="" data-iconpos="left">
+	                <ul>                    
+	                    <li><a href="#pageEtat">Etat</a></li>
+	                    <li><a href="#pageSynoptique">Synoptique</a></li>
+	                    <li><a href="#pageCommande">Commande</a></li>
+	                </ul>
+	            </div>
+	        </div>
+		</div>
+
+		<!--
+	                    ======================================
+	                                page Camera
+	                    ======================================
+	        -->
+
+	    <div data-role="page" id="pageCamera" data-theme="b">
+	    	<div id="header" class="general">
+				<img id="imgCnes" src="images/cnes.png" />	
+			</div>
+
+			<div class="general body">
+				<ul id="navSyno">
+		            <li><a>Instrument</a>
+		                <ul>
+		                    <li><a href="#pageSynoptique">CubeSat</a></li>
+		                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
+		                    <li><a href="#pageCamera">Caméra</a></li>
+		                    <li><a href="#pageMatrice">Matrice</a></li>
+		                </ul>
+		            </li>
+	        	</ul>
+
+	        	<div id="slideshow">
+		            <div>
+		                <img src="./images/planete.jpg" width="300" height="300">
+		            </div>
+		            <div>
+		                <img src="./images/ihm_camera.jpg" width="300" height="260">
+		            </div>
+		            <div>
+		                <img src="./images/planete1.jpg" width="300" height="260">
+		            </div>
+		        </div>
+		        <script>
+		            $("#slideshow > div:gt(0)").hide();
+
+		            setInterval(function() {
+		                $('#slideshow > div:first')
+		                    .fadeOut(1000)
+		                    .next()
+		                    .fadeIn(1000)
+		                    .end()
+		                    .appendTo('#slideshow');
+		            }, 3000);
+		        </script>
+		        <table id="tableCamera">
+		            <tr>
+		                <th><mark>Info Caméra : </mark></th>
+		                <td id="InfoCamera1"></td>
+		            </tr>
+		            <tr>
+		                <th><mark>Info Caméra : </mark></th>
+		                <td id="InfoCamera2"></td>
+		            </tr>
+		        </table>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+	            <div data-role="navbar" data-grid="" data-iconpos="left">
+	                <ul>                    
+	                    <li><a href="#pageEtat">Etat</a></li>
+	                    <li><a href="#pageSynoptique">Synoptique</a></li>
+	                    <li><a href="#pageCommande">Commande</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+
+	    <!--
+	                    ======================================
+	                                page Magnetometre
+	                    ======================================
+	        -->
+		
+		<div data-role="page" id="pageMagnetometre" data-theme="b">
+			<div id="header" class="general">
+				<img id="imgCnes" src="images/cnes.png" />	
+			</div>
+
+			<div class="general body">
+
+				<ul id="navSyno">
+		            <li><a>Instrument</a>
+		                <ul>
+		                    <li><a href="#pageSynoptique">CubeSat</a></li>
+		                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
+		                    <li><a href="#pageCamera">Caméra</a></li>
+		                    <li><a href="#pageMatrice">Matrice</a></li>
+		                </ul>
+		            </li>
+	        	</ul>
+
+				<div id="imgMagneto">
+	            	<img src="./images/imgMagneto.png" width="500" height="350" />
+	       		</div>
+
+	        	<div id="donnesMagneto">
+		            <table id="tableMagneto">
+		                <tr>
+		                    <th><mark>Valeur BX (μT) : </mark></th>
+		                    <td id="ValeurMagnetoBX"></td>
+		                </tr>
+		                <tr>
+		                    <th><mark>Valeur BY (μT) : </mark></th>
+		                    <td id="ValeurMagnetoBY"></td>
+		                </tr>
+		                <tr>
+		                    <th><mark>Valeur BZ (μT) : </mark></th>
+		                    <td id="ValeurMagnetoBZ"></td>
+		                </tr>
+		            </table>
+	        	</div>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+	            <div data-role="navbar" data-grid="" data-iconpos="left">
+	                <ul>                    
+	                    <li><a href="#pageEtat">Etat</a></li>
+	                    <li><a href="#pageSynoptique">Synoptique</a></li>
+	                    <li><a href="#pageCommande">Commande</a></li>
+	                </ul>
+	            </div>
+	        </div>
+		</div>
+
+		<!--
+	            ======================================
+	                        page Commande
+	            ======================================
+	        -->
+	    <div data-role="page" id="pageCommande" data-theme="b">
+	    	<div id="header" class="general">
+				<img id="imgCnes" src="images/cnes.png" />	
+			</div>
+
+			<div class="general body">
+				<form name="COMMANDE" action="/cgi-bin/c2.cgi" method="get">
+		            <legend>Veuillez sélectionner vos commandes</legend>
+		            <div>
+		                <input type="radio" id="measure" name="interest" value="measure">
+		                <label for="measure">MEASURE</label>
+		            </div>
+		            <div>
+		                <input type="radio" id="status" name="interest" value="status">
+		                <label for="status">STATUS</label>
+		            </div>
+		            <div>
+		                <input type="radio" id="mission" name="interest" value="mission">
+		                <label for="mission">MISSION</label>
+		            </div>
+		            <div>
+		                <input type="radio" id="deploy" name="interest" value="deploy">
+		                <label for="deploy">DEPLOY</label>
+		            </div>
+		            <div>
+		                <input type="radio" id="other" name="interest" value="other">
+		                <label for="other">Autre</label>
+		                <input type="text" id="otherValue" name="other">
+		            </div>
+		            <p>Date: <input type="text" id="datepicker"></p>
+		            <div>
+		                <button type="submit">Envoyer le formulaire</button>
+		            </div>
+	        	</form>
+			</div>
+
+
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+	            <div data-role="navbar" data-grid="" data-iconpos="left">
+	                <ul>                    
+	                    <li><a href="#pageEtat">Etat</a></li>
+	                    <li><a href="#pageSynoptique">Synoptique</a></li>
+	                    <li><a href="#pageCommande">Commande</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+
+	    <!--
+	                ======================================
+	                            page Matrice
+	                ======================================
+	        -->
+		
+		<div data-role="page" id="pageMatrice" data-theme="b">
+			<div id="header" class="general">
+				<img id="imgCnes" src="images/cnes.png"/>	
+			</div>
+			
+			<div class="general body">
+				<ul id="navSyno">
+		            <li><a>Instrument</a>
+		                <ul>
+		                    <li><a href="#pageSynoptique">CubeSat</a></li>
+		                    <li><a href="#pageMagnetometre">Magnétomètre</a></li>
+		                    <li><a href="#pageCamera">Caméra</a></li>
+		                    <li><a href="#pageMatrice">Matrice</a></li>
+		                </ul>
+		            </li>
+	        	</ul>
+
+				<table id="tableMatrice">
+					<thead>
+						<tr>
+	                        <th data-priority="1">Instrument</th>
+	                        <th data-priority="2">Moyenne des mesures en °C</th>
+	                        <th data-priority="3">Etat camera IR</th>
+	                    </tr>
+					</thead>
+					<tbody>
+						<tr>
+	                        <td>Camera Thermique</td>
+	                        <td id="tempMoyenne"></td>
+							<td id="CameraIR"></td>
+	                    </tr>
+					</tbody>
+				</table>
+				<div id="matriceP5">
+					 <script type="text/javascript" src="js/matrice/mainMatrice.js"></script> 
+		            <script type="text/javascript" src="js/matrice/CCamera.js"></script>     
+		            <script type="text/javascript" src="js/matrice/CMatrice2.js"></script>
+		            <script type="text/javascript" src="js/matrice/Square.js"></script>  
+	            </div>
+			</div>
+			
+
+
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-fullscreen="false" data-theme="b">
+	            <div data-role="navbar" data-grid="" data-iconpos="left">
+	                <ul>                    
+	                    <li><a href="#pageEtat">Etat</a></li>
+	                    <li><a href="#pageSynoptique">Synoptique</a></li>
+	                    <li><a href="#pageCommande">Commande</a></li>
+	                </ul>
+	            </div>
+	        </div>
+		</div>
+	</body>
+</html>	
