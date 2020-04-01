@@ -35,9 +35,7 @@ int main(){
 			arr[i] = number;
 			number = rand()%(max-min + 1) + min;
 		}		
-	}
 		
-	for (int i = 0; i < 10 ;i++){
 		cout << "event: etat"<<"\n";
 		cout << "data: " << "{\"stockage\": { "
 
