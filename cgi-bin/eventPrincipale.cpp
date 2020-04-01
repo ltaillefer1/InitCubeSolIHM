@@ -15,13 +15,11 @@ int main(){
 		number = rand()%(max-min + 1) + min;
 	}
 
-	
+	cout << "Content-Type: text/event-stream\r\n\r\n";
+	cout << "Cache-Control: no-cache\r\n\r\n";
 
 		
-	for (int i = 0; i < 9 ;i++){
-
-		cout << "Content-Type: text/event-stream\r\n\r\n";
-		cout << "Cache-Control: no-cache\r\n\r\n";
+	for (int i = 0; i < 9 ;i++){		
 
 		cout << "event: matrice"<<"\n";
 		cout << "data : "<<"{\"matrice\":[" << arr[0]<<","<< arr[1]<<","<< arr[2]<<","<< arr[3]<<","<< arr[4]<<","<< arr[5]<<","<< arr[6]<<","<< arr[7]<<","
@@ -39,9 +37,8 @@ int main(){
 			number = rand()%(max-min + 1) + min;
 		}
 	}		
-		cout << "Content-Type: text/event-stream\r\n\r\n";
-		cout << "Cache-Control: no-cache\r\n\r\n";
 		
+
 		cout << "event: etat"<<"\n";
 		cout << "data: " << "{\"stockage\": { "
 
