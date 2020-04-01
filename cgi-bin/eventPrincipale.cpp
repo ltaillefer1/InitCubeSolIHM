@@ -7,6 +7,11 @@ int main(){
 	int deuxiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int number = 0;
+	int arr = [64];
+	for (int i = 0; i < 64; i++){
+		arr[i] = number
+		number++;
+	}
 
 	cout << "Content-Type: text/event-stream\r\n\r\n";
 	cout << "Cache-Control: no-cache\r\n\r\n";
@@ -19,12 +24,8 @@ int main(){
 			cout << "data : "<<endl;*/			
 		
 			cout << "event: matrice"<<"\n";
-			for (int i=0 ; i<10;i++)
-       		{
-                cout << "data:" << "{\"temp\":"<<number++<<",\"matrice\":["<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number-5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+8<<","<<number+10<<","<<number+15<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number-5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<"]}" "\r\n\r\n" <<endl;
-
-                usleep(1000000);
-        	}
+			cout << "data : " << for (int i = 0; i < 64; i++){arr[i]<<","};
+		
 
 			cout << "event: etat"<<"\n";
 			cout << "data: " << "{\"stockage\": { "
