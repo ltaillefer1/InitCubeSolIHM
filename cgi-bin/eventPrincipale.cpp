@@ -96,7 +96,7 @@ int main(){
         	<<"\"InfoCamera2\" : "<<rand()%101
         	<<"},"
         //ouverture de l'objet temperature Systeme
-    	<<"\"temperatureSys\" : { "<<
+    	<<"\"temperatureSys\" : { "
 
 			//température0
 			<< "\"temp\":"
