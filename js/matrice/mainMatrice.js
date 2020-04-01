@@ -30,8 +30,6 @@ function update() {
         var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
         source.addEventListener("matrice", function(event) {
             var obj = JSON.parse(event.data);
-            document.getElementById("temp").innerHTML = obj.temp;
-            //document.getElementById("matrice").innerHTML = obj.matrice;
             camerA.setPixel(obj.matrice);
             matrice.update();
             matrice.show();
