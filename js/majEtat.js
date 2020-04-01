@@ -15,10 +15,10 @@ source.addEventListener("etat", function(event) {
     document.getElementById("InfoCamera1").innerHTML = obj.camera.InfoCamera1;
     document.getElementById("InfoCamera2").innerHTML = obj.camera.InfoCamera2;
 
-/*    document.getElementById("Temperature").innerHTML = obj.temp + " °C";*/
-    document.getElementById("Temperature1").innerHTML = obj.temp1 + " °C";
-    document.getElementById("Temperature2").innerHTML = obj.temp2 + " °C";
-    document.getElementById("Temperature3").innerHTML = obj.temp3 + " °C";
+    document.getElementById("Temperature").innerHTML = obj.temperatureSys.temp + " °C";
+    document.getElementById("Temperature1").innerHTML = obj.temperatureSys.temp1 + " °C";
+    document.getElementById("Temperature2").innerHTML = obj.temperatureSys.temp2 + " °C";
+    document.getElementById("Temperature3").innerHTML = obj.temperatureSys.temp3 + " °C";
 
     if (obj.cameraIR == 0) {
         document.getElementById("CameraIR").innerHTML = "OFF";

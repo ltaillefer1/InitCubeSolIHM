@@ -95,26 +95,29 @@ int main(){
         	//Caméra
         	<<"\"InfoCamera2\" : "<<rand()%101
         	<<"},"
+        //ouverture de l'objet temperature Systeme
+    	<<"\"temperatureSys\" : { "<<
 
-		//température0
-		<< "\"temp\":"
-		<< rand()%61<<","
+			//température0
+			<< "\"temp\":"
+			<< rand()%61<<","
 
-		//température1
-		<<"\"temp1\":"
-		<<rand()%61<<","
+			//température1
+			<<"\"temp1\":"
+			<<rand()%61<<","
 
-		//température2
-		<<"\"temp2\":"
-		<<rand()%61<<","
+			//température2
+			<<"\"temp2\":"
+			<<rand()%61<<","
 
-		//temperature3
-		<<"\"temp3\":"
-		<<rand()%61<<","
+			//temperature3
+			<<"\"temp3\":"
+			<<rand()%61<<","
 
-		//temperature4
-		<<"\"temp4\":"
-		<<rand()%61<<","
+			//temperature4
+			<<"\"temp4\":"
+			<<rand()%61<<","
+			<< "},"
 
 		//cameraIR
 		<<"\"cameraIR\":"
