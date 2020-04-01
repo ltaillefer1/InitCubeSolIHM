@@ -34,7 +34,8 @@ int main(){
 		for (int i = 0; i < 64; i++){
 			arr[i] = number;
 			number = rand()%(max-min + 1) + min;
-		}		
+		}
+	}		
 		
 		cout << "event: etat"<<"\n";
 		cout << "data: " << "{\"stockage\": { "
@@ -116,7 +117,7 @@ int main(){
 
 			//temperature4
 			<<"\"temp4\":"
-			<<rand()%61<<","
+			<<rand()%61<<
 			<< "},"
 
 		//cameraIR
@@ -124,6 +125,6 @@ int main(){
 		<<rand()%2
 
  	<< "}"<<"\r\n\r\n";
-	}
+	
 	return 0;		
 }
