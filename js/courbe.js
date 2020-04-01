@@ -39,19 +39,6 @@ var myChart = new Chart(ctx, {
                 }
             }]
         },
-        maintainAspectRatio: true
+        maintainAspectRatio: false
     }
 });
-
-
-
-
-        /*options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }*/
