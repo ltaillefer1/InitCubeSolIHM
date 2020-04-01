@@ -1,28 +1,24 @@
 #include "Lib.h"
 using namespace std;
 
-int newValue(int max, int min, int a[]);
-
 int main(){
 
 	int premiereValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int deuxiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
-	int number = 0;
 	int arr[64];
 	int min = 0;
 	int max = 10;
-	arr = newValue(max, min, arr[]);
+	int number = rand()%(max-min + 1) + min;
+	for (int i = 0; i < 64; i++){
+		arr[i] = number;
+		number = rand()%(max-min + 1) + min;
+	}
 
 	cout << "Content-Type: text/event-stream\r\n\r\n";
 	cout << "Cache-Control: no-cache\r\n\r\n";
 
-	
-			/*cout << "Event: ACK\r\n\r\n";
-			cout << "data : "<<endl;
 		
-			cout << "Event: mesure\r\n\r\n";
-			cout << "data : "<<endl;*/			
 	for (int i = 0; i < 10 ;i++){	
 		cout << "event: matrice"<<"\n";
 		cout << "data : "<<"{\"matrice\":[" << arr[0]<<","<< arr[1]<<","<< arr[2]<<","<< arr[3]<<","<< arr[4]<<","<< arr[5]<<","<< arr[6]<<","<< arr[7]<<","
@@ -32,10 +28,13 @@ int main(){
 		<< arr[32]<<","<< arr[33]<<","<< arr[34]<<","<< arr[35]<<","<< arr[36]<<","<< arr[37]<<","<< arr[38]<<","<< arr[39]<<","
 		<< arr[40]<<","<< arr[41]<<","<< arr[42]<<","<< arr[43]<<","<< arr[44]<<","<< arr[45]<<","<< arr[46]<<","<< arr[47]<<","
 		<< arr[48]<<","<< arr[49]<<","<< arr[50]<<","<< arr[51]<<","<< arr[52]<<","<< arr[53]<<","<< arr[54]<<","<< arr[55]<<","
-		<< arr[56]<<","<< arr[57]<<","<< arr[58]<<","<< arr[59]<<","<< arr[60]<<","<< arr[61]<<","<< arr[62]<<","<< arr[63]<<"," << "]}"<<"\r\n\r\n";
-		arr = newValue(max, min, arr[]);
+		<< arr[56]<<","<< arr[57]<<","<< arr[58]<<","<< arr[59]<<","<< arr[60]<<","<< arr[61]<<","<< arr[62]<<","<< arr[63]<<"," << "]}"<<"\r\n\r\n";	
 		min += 10;
 		max += 10;
+		for (int i = 0; i < 64; i++){
+			arr[i] = number;
+			number = rand()%(max-min + 1) + min;
+		}		
 	}
 		
 	for (int i = 0; i < 10 ;i++){
@@ -123,20 +122,7 @@ int main(){
 		<<"\"cameraIR\":"
 		<<rand()%2
 
- << "}"<<"\r\n\r\n";
-}
-
-	return 0;		
-}
-
-int newValue(int max, int min, int a[]){
-	if(max < 90){
-	int number = rand()%(max-min + 1) + min;
-		for (int i = 0; i < 64; i++){
-			a[i] = number;
-			number = rand()%(max-min + 1) + min;
-		}
-	}else {
-		return a*;
+ 	<< "}"<<"\r\n\r\n";
 	}
+	return 0;		
 }
