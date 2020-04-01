@@ -1,4 +1,4 @@
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -35,10 +35,11 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false
                 }
             }]
-        }
+        },
+        maintainAspectRatio: true
     }
 });
 for (var i = 0; i < 10; i++) {
@@ -54,3 +55,16 @@ for (var i = 0; i < 10; i++) {
         myChart.data.datasets[3].data[10] = obj.temp3;
         myChart.data.datasets[4].data[10] = obj.temp4;
         myChart.update();
+
+
+
+
+        /*options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }*/

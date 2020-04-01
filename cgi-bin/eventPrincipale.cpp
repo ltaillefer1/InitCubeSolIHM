@@ -1,26 +1,33 @@
-#include <iostream>
-#include <unistd.h>
-#include <string>
+#include "Lib.h"
 using namespace std;
 
 int main(){
-	/*string nomEvent = ["ACK", "mesure", "status", "matrice"];*/
+
+	int premiereValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int deuxiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
+	int number = 0;
 
 	cout << "Content-Type: text/event-stream\r\n\r\n";
 	cout << "Cache-Control: no-cache\r\n\r\n";
 
 	
-			cout << "Event: ACK\r\n\r\n";
+			/*cout << "Event: ACK\r\n\r\n";
 			cout << "data : "<<endl;
 		
 			cout << "Event: mesure\r\n\r\n";
-			cout << "data : "<<endl;			
+			cout << "data : "<<endl;*/			
 		
-			cout << "Event: status\r\n\r\n";
-			cout << "data : "<<endl;
+			cout << "event: matrice\n";
+			for (int i=0 ; i<10;i++)
+       		{
+                cout << "data:" << "{\"temp\":"<<number++<<",\"matrice\":["<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number-5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+8<<","<<number+10<<","<<number+15<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number-5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<","<<number++<<","<<number+2<<","<<number+3<<","<<number+4<<","<<number+5<<","<<number+6<<","<<number+7<<","<<number+8<<"]}" "\r\n\r\n" <<endl;
 
-			cout << "Event: etat\r\n\r\n";
-			cout << "data : " << "{\"stockage\": { "
+                usleep(1000000);
+        	}
+
+			cout << "event: etat\n";
+			cout << "data: " << "{\"stockage\": { "
 
 				// Stockage libre en Mo(Valeur comprise entre 0 et 100) 
 				<<"\"stockLibreMo\" :"<<rand()%101 << ","				
@@ -99,9 +106,11 @@ int main(){
 			<<"\"temp4\":"
 			<<rand()%61<<","
 
-			//camera
+			//cameraIR
 			<<"\"cameraIR\":"
 			<<rand()%2
 
-     << "}"<<endl;;		
+     << "}"<<"\r\n\r\n";
+
+	return 0;		
 }
