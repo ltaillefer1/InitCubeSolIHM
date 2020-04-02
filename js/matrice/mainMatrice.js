@@ -28,7 +28,7 @@ function update() {
 
         //à chaque fois que la valeur du slider change, on modifie la couleur de fond de la barre
         //en fonction de la valeur du slider.
-        var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
+        var source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
         source.addEventListener("matrice", function(event) {
             var obj = JSON.parse(event.data);
             camerA.setPixel(obj.matrice);
