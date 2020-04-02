@@ -25,8 +25,8 @@ function draw() {
 }
 
 function update() { 
-    $(document).ready(function() { 
-        var obj =  document.getElementById("arrMatrice").innerHTML;
+    document.addEventListener("DOMcontentLoaded" ,function(event) { 
+        var obj = document.getElementById("arrMatrice").innerHTML;
         camerA.setPixel(obj.matrice);
         matrice.update();
         matrice.show();
