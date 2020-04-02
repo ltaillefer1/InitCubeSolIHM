@@ -26,7 +26,7 @@ function draw() {
 
 function update() { 
     $(document).ready(function() { 
-        var obj =  document.getElementById("StockLibreMo").innerHTML;
+        var obj =  document.getElementById("arrMatrice").innerHTML;
         camerA.setPixel(obj.matrice);
         matrice.update();
         matrice.show();
