@@ -24,8 +24,10 @@ function draw() {
 }
 
 function update() { 
-    var obj = document.getElementById("arrMatrice").innerHTML;
-    camerA.setPixel(obj.matrice);
-    matrice.update();
-    matrice.show();
+    $(document).ready(function() { 
+        var obj =  document.getElementById("StockLibreMo").innerHTML;
+        camerA.setPixel(obj.matrice);
+        matrice.update();
+        matrice.show();
+    });
 }
