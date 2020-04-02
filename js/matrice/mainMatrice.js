@@ -6,7 +6,8 @@ var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
 
 function preload(){
     source.addEventListener("etat", function(event) {
-        var obj = loadJSON(event.data);
+        var url = "event.data";
+        var obj = loadJSON(url);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
         document.getElementById("TensionSortie").innerHTML = obj.batterie.tension + " V";
         document.getElementById("CourantSortie").innerHTML = obj.batterie.courant + " mA";
