@@ -1,5 +1,5 @@
 var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
-var matriceData = new Array(64);
+var matriceData = [];
 source.addEventListener("etat", function(event) {
     var obj = JSON.parse(event.data);
     document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
