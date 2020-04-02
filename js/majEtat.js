@@ -1,5 +1,4 @@
 var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
-var matriceData = [];
 source.addEventListener("etat", function(event) {
     var obj = JSON.parse(event.data);
     document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
@@ -40,19 +39,7 @@ source.addEventListener("etat", function(event) {
     myChart.data.datasets[4].data[10] = obj.temp4;
     myChart.update();
 });
-/*source.addEventListener("matrice", function(event){
-    var obj = JSON.parse(event.data);
-    document.getElementById("arrMatrice").innerHTML = obj.matrice;
-    for (let i = 0; i < 64; i++){
-        matriceData[i] = obj.matrice[i];
-    } 
-});*/
 source.addEventListener("matrice", function(evt){
     var obj = JSON.parse(evt.data);
     document.getElementById("arrMatrice").innerHTML = obj.matrice;
 });
-
-
-function getMatriceData(){
-    return matriceData;
-}

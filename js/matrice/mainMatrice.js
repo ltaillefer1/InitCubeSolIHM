@@ -18,7 +18,6 @@ function setup() {
 }
 
 function draw() {
-    matrice.show();
     if(frameCount == nbFrame + 30){
     	update();
     	nbFrame = frameCount;
@@ -26,8 +25,9 @@ function draw() {
 }
 
 function update() { 
-    document.addEventListener("DOMContentLoaded" ,function(event) { 
+    $(document).ready(function() { 
         camerA.setPixel(document.getElementById("arrMatrice").innerHTML);
         matrice.update();
+        matrice.show();
     });
 }
