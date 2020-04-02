@@ -14,6 +14,7 @@ function setup() {
     matrice = new CMatrice2(camerA);
     /*console.log(camerA.getArray());*/
     /*console.log(matrice.getArray());*/
+    update();
 }
 
 function draw() {
@@ -28,6 +29,7 @@ function update() {
     document.addEventListener("DOMcontentLoaded" ,function(event) { 
         source.addEventListener("matrice", function(event){
             var obj = JSON.parse(event.data);
+            console.log(obj.matrice);
             /*document.getElementById("arrMatrice").innerHTML = obj.matrice;*/
             camerA.setPixel(obj.matrice);
             matrice.update();
