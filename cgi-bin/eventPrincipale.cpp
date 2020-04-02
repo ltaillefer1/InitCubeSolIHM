@@ -22,7 +22,7 @@ int main(){
 	for (int i = 0; i < 9 ;i++){		
 
 		cout << "event: matrice"<<"\n";
-		cout << "data : "<<"{\"matrice\":[" 
+		cout << "data : "<<"{\"matrice\":["; 
 		for (int j = 0; j < 64; j++){
 			cout << arr[j]<<",";
 		}
