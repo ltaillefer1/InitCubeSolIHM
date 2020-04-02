@@ -27,8 +27,8 @@ function draw() {
 
 function update() { 
     document.addEventListener("DOMcontentLoaded" ,function(event) { 
-        source.addEventListener("matrice", function(event){
-            var obj = JSON.parse(event.data);
+        source.addEventListener("matrice", function(evt){
+            var obj = JSON.parse(evt.data);
             console.log(obj.matrice);
             /*document.getElementById("arrMatrice").innerHTML = obj.matrice;*/
             camerA.setPixel(obj.matrice);
