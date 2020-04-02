@@ -2,7 +2,7 @@ var camerA;
 var matrice;
 var nbFrame;
 var cnv;
-var 
+var source;
 
 function preload(){
     source = new EventSource("../cgi-bin/cubeEventServer.cgi");
