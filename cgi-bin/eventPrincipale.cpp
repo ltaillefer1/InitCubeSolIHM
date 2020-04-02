@@ -25,6 +25,9 @@ int main(){
 		cout << "data : "<<"{\"matrice\":["; 
 		for (int j = 0; j < 64; j++){
 			cout << arr[j]<<",";
+			if (j == 63){
+				cout << arr[j];
+			}
 		}
 		cout <<"]}" <<"\r\n\r\n";	
 		min += 10;
