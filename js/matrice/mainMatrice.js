@@ -2,7 +2,7 @@ var camerA;
 var matrice;
 var nbFrame;
 var cnv;
-var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
+var source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
 
 function preload(){
     source.addEventListener("etat", function(event) {
