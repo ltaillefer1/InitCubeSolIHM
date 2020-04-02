@@ -41,5 +41,6 @@ source.addEventListener("etat", function(event) {
 });
 source.addEventListener("matrice", function(event){
     var obj = JSON.parse(event.data);
+    console.log(obj.matrice);
     document.getElementById("arrMatrice").innerHTML = obj.matrice;
 })
