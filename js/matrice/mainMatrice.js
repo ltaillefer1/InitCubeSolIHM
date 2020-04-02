@@ -4,15 +4,9 @@ var nbFrame;
 var cnv;
 var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
 
-function setup() {
-    camerA = new CCamera();
-    matrice = new CMatrice2(camerA);
-    /*console.log(camerA.getArray());*/
-    /*console.log(matrice.getArray());*/
-
-
+function preload(){
     source.addEventListener("etat", function(event) {
-        var obj = JSON.parse(event.data);
+        var obj = loadJSON(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
         document.getElementById("TensionSortie").innerHTML = obj.batterie.tension + " V";
         document.getElementById("CourantSortie").innerHTML = obj.batterie.courant + " mA";
@@ -52,9 +46,17 @@ function setup() {
     myChart.update();*/
     });
     source.addEventListener("matrice", function(evt){
-        var obj = JSON.parse(evt.data);
+        var obj = loadJSON(evt.data);
         camerA.setPixel(evt.matrice);
     });
+}
+
+function setup() {
+    camerA = new CCamera();
+    matrice = new CMatrice2(camerA);
+    /*console.log(camerA.getArray());*/
+    /*console.log(matrice.getArray());*/
+    
     cnv = createCanvas(600, 600);
     cnv.parent('matriceP5');
     cnv.position(300,0,'z-index', '-2');
