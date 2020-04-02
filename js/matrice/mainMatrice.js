@@ -3,6 +3,7 @@ var matrice;
 var nbFrame;
 var cnv;
 var source;
+var arr;
 
 function preload(){
     source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
@@ -48,7 +49,7 @@ function preload(){
     });
     source.addEventListener("matrice", function(evt){
         var obj = JSON.parse(evt.data);
-        camerA.setPixel(evt.matrice);
+        arr = obj.matrice;
     });
 }
 
@@ -62,7 +63,9 @@ function setup() {
     cnv.parent('matriceP5');
     cnv.position(300,0,'z-index', '-2');
     frameRate(30);
-    nbFrame = 0;    
+    nbFrame = 0;
+    camerA.setPixel(arr);
+    matrice.update();    
 }
 
 function draw() {
