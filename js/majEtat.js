@@ -47,6 +47,11 @@ source.addEventListener("etat", function(event) {
         matriceData[i] = obj.matrice[i];
     } 
 });*/
+source.addEventListener("matrice", function(evt){
+    var obj = JSON.parse(evt.data);
+    document.getElementById("arrMatrice").innerHTML = obj.matrice;
+});
+
 
 function getMatriceData(){
     return matriceData;

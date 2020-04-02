@@ -27,12 +27,7 @@ function draw() {
 
 function update() { 
     document.addEventListener("DOMContentLoaded" ,function(event) { 
-        source.addEventListener("matrice", function(evt){
-            var obj = JSON.parse(evt.data);
-            console.log(obj.matrice);
-            /*document.getElementById("arrMatrice").innerHTML = obj.matrice;*/
-            camerA.setPixel(obj.matrice);
-            matrice.update();
-        });
+        camerA.setPixel(document.getElementById("arrMatrice").innerHTML);
+        matrice.update();
     });
 }
