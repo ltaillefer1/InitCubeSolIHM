@@ -1,4 +1,5 @@
 var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
+var matriceData = new Array(64);
 source.addEventListener("etat", function(event) {
     var obj = JSON.parse(event.data);
     document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
@@ -41,6 +42,10 @@ source.addEventListener("etat", function(event) {
 });
 source.addEventListener("matrice", function(event){
     var obj = JSON.parse(event.data);
-    console.log(obj.matrice);
-    document.getElementById("arrMatrice").innerHTML = obj.matrice;
+    /*document.getElementById("arrMatrice").innerHTML = obj.matrice;*/
+    matriceData = obj.matrice;
 })
+
+function getMatriceData(){
+    return matriceData;
+}
