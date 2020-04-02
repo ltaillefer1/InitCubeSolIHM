@@ -57,4 +57,8 @@ class CCamera {
     ColdGetPixel(numero) {
         return this.coldpixel[numero];
     }
+
+    getArray(){
+        return this.pixel;
+    }
 }
