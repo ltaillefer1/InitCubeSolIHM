@@ -26,9 +26,11 @@ function draw() {
 
 function update() { 
     document.addEventListener("DOMcontentLoaded" ,function(event) { 
-        var obj = getMatriceData();
-        camerA.setPixel(obj);
-        matrice.update();
-        matrice.show();
+        source.addEventListener("matrice", function(event){
+            var obj = JSON.parse(event.data);
+            /*document.getElementById("arrMatrice").innerHTML = obj.matrice;*/
+            camerA.setPixel(obj.matrice);
+            matrice.update();
+        });
     });
 }

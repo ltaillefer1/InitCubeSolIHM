@@ -40,13 +40,13 @@ source.addEventListener("etat", function(event) {
     myChart.data.datasets[4].data[10] = obj.temp4;
     myChart.update();
 });
-source.addEventListener("matrice", function(event){
+/*source.addEventListener("matrice", function(event){
     var obj = JSON.parse(event.data);
-    /*document.getElementById("arrMatrice").innerHTML = obj.matrice;*/
+    document.getElementById("arrMatrice").innerHTML = obj.matrice;
     for (let i = 0; i < 64; i++){
         matriceData[i] = obj.matrice[i];
     } 
-});
+});*/
 
 function getMatriceData(){
     return matriceData;
