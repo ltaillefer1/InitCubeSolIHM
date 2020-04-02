@@ -9,7 +9,6 @@ function setup() {
     matrice = new CMatrice2(camerA);
     /*console.log(camerA.getArray());*/
     /*console.log(matrice.getArray());*/
-    update();
 
 
     source.addEventListener("etat", function(event) {
@@ -38,7 +37,7 @@ function setup() {
         } else {
             document.getElementById("CameraIR").innerHTML = "ON";
         }
-        for (var i = 0; i < 10; i++) {
+        /*for (var i = 0; i < 10; i++) {
             myChart.data.datasets[0].data[i] = myChart.data.datasets[0].data[i + 1];
             myChart.data.datasets[1].data[i] = myChart.data.datasets[1].data[i + 1];
             myChart.data.datasets[2].data[i] = myChart.data.datasets[2].data[i + 1];
@@ -50,7 +49,7 @@ function setup() {
     myChart.data.datasets[2].data[10] = obj.temp2;
     myChart.data.datasets[3].data[10] = obj.temp3;
     myChart.data.datasets[4].data[10] = obj.temp4;
-    myChart.update();
+    myChart.update();*/
     });
     source.addEventListener("matrice", function(evt){
         var obj = JSON.parse(evt.data);
@@ -65,7 +64,7 @@ function setup() {
 
 function draw() {
     if(frameCount == nbFrame + 30){
-    	update();
+    	/*update();*/
     	nbFrame = frameCount;
     }
 }
