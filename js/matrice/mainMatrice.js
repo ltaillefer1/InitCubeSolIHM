@@ -2,7 +2,7 @@ var camerA;
 var matrice;
 var nbFrame;
 var cnv;
-var source;
+var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
 
 function setup() {
     camerA = new CCamera();
@@ -12,7 +12,6 @@ function setup() {
     update();
 
 
-    source = new EventSource("../cgi-bin/cubeEventServer.cgi");
     source.addEventListener("etat", function(event) {
         var obj = JSON.parse(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
