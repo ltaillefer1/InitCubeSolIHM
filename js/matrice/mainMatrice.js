@@ -26,7 +26,7 @@ function draw() {
 }
 
 function update() { 
-    document.addEventListener("DOMC<ontentLoaded" ,function(event) { 
+    document.addEventListener("DOMContentLoaded" ,function(event) { 
         source.addEventListener("matrice", function(evt){
             var obj = JSON.parse(evt.data);
             console.log(obj.matrice);
