@@ -9,11 +9,11 @@ source.addEventListener("etat", function(event) {
     document.getElementById("StockLibre%").innerHTML = obj.stockage.stockLibreEnP + " %";
     document.getElementById("StockLibreMo").innerHTML = obj.stockage.stockLibreMo + " Mo";
 
-    document.getElementById("ValeurMagnetoBX").innerHTML = obj.magneto.ValeurMagnetoBX + " μT";
+    /*document.getElementById("ValeurMagnetoBX").innerHTML = obj.magneto.ValeurMagnetoBX + " μT";
     document.getElementById("ValeurMagnetoBY").innerHTML = obj.magneto.ValeurMagnetoBY + " μT";
     document.getElementById("ValeurMagnetoBZ").innerHTML = obj.magneto.ValeurMagnetoBZ + " μT";
     document.getElementById("InfoCamera1").innerHTML = obj.camera.InfoCamera1;
-    document.getElementById("InfoCamera2").innerHTML = obj.camera.InfoCamera2;
+    document.getElementById("InfoCamera2").innerHTML = obj.camera.InfoCamera2;*/
 
 /*    document.getElementById("Temperature").innerHTML = obj.temperatureSys.temp + " °C";
     document.getElementById("Temperature1").innerHTML = obj.temperatureSys.temp1 + " °C";
@@ -39,3 +39,7 @@ source.addEventListener("etat", function(event) {
     myChart.data.datasets[4].data[10] = obj.temp4;
     myChart.update();
 });
+source.addEventListener("matrice", function(event){
+    var obj = JSON.parse(event.data);
+    document.getElementById("arrMatrice").innerHTML = obj.matrice;
+})

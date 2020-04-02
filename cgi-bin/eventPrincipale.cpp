@@ -76,16 +76,16 @@ int main(){
 
 			//Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
 			//Magnetomètre
-        <<"\"ValeurMagnetoBX\":"
-        <<premiereValeurMagneto<<","
+	        <<"\"ValeurMagnetoBX\":"
+	        <<premiereValeurMagneto<<","
 
-        //Magnetomètre
-        <<"\"ValeurMagnetoBY\":"
-        <<deuxiemeValeurMagneto<<","
+	        //Magnetomètre
+	        <<"\"ValeurMagnetoBY\":"
+	        <<deuxiemeValeurMagneto<<","
 
-        //Magnetomètre
-        <<"\"ValeurMagnetoBZ\":"
-        <<troisiemeValeurMagneto<<"},"
+	        //Magnetomètre
+	        <<"\"ValeurMagnetoBZ\":"
+	        <<troisiemeValeurMagneto<<"},"
 
 			//Ouverture de l'objet camera
 		<<"\"camera\" : { "

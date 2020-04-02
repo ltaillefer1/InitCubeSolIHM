@@ -23,17 +23,9 @@ function draw() {
     }
 }
 
-function update() {
-    $(document).ready(function() { // lancé quand le DOM est initialisé (prêt)  
-
-        //à chaque fois que la valeur du slider change, on modifie la couleur de fond de la barre
-        //en fonction de la valeur du slider.
-        var source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
-        source.addEventListener("matrice", function(event) {
-            var obj = JSON.parse(event.data);
-            camerA.setPixel(obj.matrice);
-            matrice.update();
-            matrice.show();
-        });
-    });
+function update() { 
+    var obj = document.getElementById("arrMatrice").innerHTML;
+    camerA.setPixel(obj.matrice);
+    matrice.update();
+    matrice.show();
 }
