@@ -2,12 +2,11 @@ var camerA;
 var matrice;
 var nbFrame;
 var cnv;
-var source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
+var source = new EventSource("../cgi-bin/cubeEventServer.cgi");
 
 function preload(){
     source.addEventListener("etat", function(event) {
-        var url = "event.data";
-        var obj = loadJSON(url);
+        var obj = JSON.parse(event.data);
         document.getElementById("ChargeBatterie").innerHTML = obj.batterie.niveauDeCharge + " %";
         document.getElementById("TensionSortie").innerHTML = obj.batterie.tension + " V";
         document.getElementById("CourantSortie").innerHTML = obj.batterie.courant + " mA";
@@ -47,7 +46,7 @@ function preload(){
     myChart.update();*/
     });
     source.addEventListener("matrice", function(evt){
-        var obj = loadJSON(evt.data);
+        var obj = JSON.parse(evt.data);
         camerA.setPixel(evt.matrice);
     });
 }
