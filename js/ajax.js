@@ -14,8 +14,8 @@ function ajaxPost(url, data, callback) {
 
             // Appelle la fonction callback en lui passant la réponse de la requête
 
-            callback(req.responseText);
             callback(req.status);
+            req.send(data);
 
         } else {
 
@@ -31,7 +31,7 @@ function ajaxPost(url, data, callback) {
 
     });
 
-    req.send(data);
+    
 
 }
 

@@ -321,11 +321,7 @@ $( document ).on( "click", function( e ){
         else
             checkbox.prop('checked', true);
     }
-  });
-
- $('#send').on('click', function() {
-    location.reload();
-});
+  }); 
    
   /*Cache du menu quand on quitte la zone des checkbox*/
   $('#MISSION').mouseleave(function(){
@@ -333,5 +329,8 @@ $( document ).on( "click", function( e ){
     });
 });
 
+$('#send').on('click', function() {
+    location.reload();
+});
 /* rafraichir la page */
 </script>
