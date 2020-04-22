@@ -57,6 +57,6 @@ class Source{
 	}
 
 	getMatrice(){
-
+		return this.arr;
 	}
 }
