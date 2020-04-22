@@ -13,8 +13,9 @@ function ajaxPost(url, data, callback) {
         if (req.status >= 200 && req.status < 400) {
 
             // Appelle la fonction callback en lui passant la réponse de la requête
-
+            
             callback(req.status);
+            
             
 
         } else {
