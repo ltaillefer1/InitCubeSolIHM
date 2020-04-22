@@ -2,7 +2,7 @@ class Source{
 	constructor(){
 		this.source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
 		this.obj = 0;
-		this.arr = 0;
+		this.arr = [];
 	}
 
 	update(){
