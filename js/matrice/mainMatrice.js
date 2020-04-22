@@ -26,11 +26,13 @@ function setup() {
 function draw() {
     matrice.show();
     if(frameCount == nbFrame + 30){
-    	/*update();*/
+    	update();
     	nbFrame = frameCount;
     }
 }
 
 function update() { 
-    
+    source.update();
+    camerA.setPixel(source.getMatrice());
+    matrice.update();
 }
