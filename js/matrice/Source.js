@@ -27,7 +27,7 @@ class Source{
 	        document.getElementById("Temperature2").innerHTML = this.obj.temperatureSys.temp2 + " °C";
 	        document.getElementById("Temperature3").innerHTML = this.obj.temperatureSys.temp3 + " °C";*/
 
-	        if (obj.cameraIR == 0) {
+	        if (this.obj.cameraIR == 0) {
 	            document.getElementById("CameraIR").innerHTML = "OFF";
 	        } else {
 	            document.getElementById("CameraIR").innerHTML = "ON";
@@ -39,11 +39,11 @@ class Source{
 	            myChart.data.datasets[3].data[i] = myChart.data.datasets[3].data[i + 1];
 	            myChart.data.datasets[4].data[i] = myChart.data.datasets[4].data[i + 1];
 	        };
-	    myChart.data.datasets[0].data[10] = obj.temp;
-	    myChart.data.datasets[1].data[10] = obj.temp1;
-	    myChart.data.datasets[2].data[10] = obj.temp2;
-	    myChart.data.datasets[3].data[10] = obj.temp3;
-	    myChart.data.datasets[4].data[10] = obj.temp4;
+	    myChart.data.datasets[0].data[10] = this.obj.temp;
+	    myChart.data.datasets[1].data[10] = this.obj.temp1;
+	    myChart.data.datasets[2].data[10] = this.obj.temp2;
+	    myChart.data.datasets[3].data[10] = this.obj.temp3;
+	    myChart.data.datasets[4].data[10] = this.obj.temp4;
 	    myChart.update();
     });
     this.source.addEventListener("matrice", function(evt){
