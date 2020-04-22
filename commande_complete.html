@@ -76,7 +76,7 @@
                                         </div>
                                         <p>Date: <input type="datepicker" name="date" id="datepicker" required></p>
                                         <!--<p>Heure:<input type="timepicker" name="heure" id="timepicker" required></p>-->
-                                          <input type="submit" value="Envoyer"> </ul>
+                                          <input type="submit" value="Envoyer" id="send"> </ul>
                                         </p>
                                 </form>
                          </section2>
@@ -310,7 +310,7 @@ $( document ).on( "click", function( e ){
   });*/
    
   /*On coche et on décoche la case quand on clique sur la ligne*/
- $('.elmt').on('click', function(e){   
+ $('.send').on('click', function(e){   
     var target = e.target;
     var checkbox = $('.check', this);
      
@@ -322,6 +322,10 @@ $( document ).on( "click", function( e ){
             checkbox.prop('checked', true);
     }
   });
+
+ $('#send').on('click', function() {
+    location.reload();
+});
    
   /*Cache du menu quand on quitte la zone des checkbox*/
   $('#MISSION').mouseleave(function(){
