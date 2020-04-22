@@ -34,3 +34,11 @@ function ajaxPost(url, data, callback) {
     req.send(data);
 
 }
+
+/*function callOtherDomain(){
+    if(req){
+
+    }
+}*/
+
+//Access-Control-Allow-Origin: https://www.mocky.io/v2/5185415ba171ea3a00704eed;
