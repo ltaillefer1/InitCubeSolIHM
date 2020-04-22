@@ -18,7 +18,7 @@ function setup() {
     cnv.position(300,0,'z-index', '-2');
     frameRate(30);
     nbFrame = 0;
-    camerA.setPixel(arr);
+    camerA.setPixel(source.getArray());
     matrice.update();    
 }
 
