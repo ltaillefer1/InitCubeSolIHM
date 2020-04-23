@@ -3,6 +3,9 @@ using namespace std;
 
 int main(){
 
+	clock_t wait;
+	wait = clock();
+
 	int premiereValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int deuxiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
 	int troisiemeValeurMagneto=(rand() % (4800 - (-4800) + 1)) - 4800;
@@ -18,11 +21,11 @@ int main(){
 	cout << "Content-Type: text/event-stream\r\n\r\n";
 	cout << "Cache-Control: no-cache\r\n\r\n";
 
-	while(1){
+	while(clock() <= (wait + 5000)){
 
 		// usleep(1000000);
 
-				
+
 		for (int i = 0; i < 64; i++){
 			arr[i] = number;
 			number = rand()%(max-min + 1) + min;
@@ -140,7 +143,8 @@ int main(){
 			<<"\"cameraIR\":"
 			<<rand()%2
 
-	 	<< "}"<<"\r\n\r\n";	
+	 	<< "}"<<"\r\n\r\n";
+	 	wait = 0;	
 	}
 
 	return 0;		
