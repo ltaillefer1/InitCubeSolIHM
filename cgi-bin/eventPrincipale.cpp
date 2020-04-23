@@ -19,6 +19,10 @@ int main(){
 	cout << "Cache-Control: no-cache\r\n\r\n";
 
 	while(1){
+
+		usleep(1000000);
+
+				
 		for (int i = 0; i < 64; i++){
 			arr[i] = number;
 			number = rand()%(max-min + 1) + min;
@@ -137,8 +141,6 @@ int main(){
 			<<rand()%2
 
 	 	<< "}"<<"\r\n\r\n";	
-
-	 	usleep(1000000);		
 	}
 
 	return 0;		
