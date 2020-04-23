@@ -10,12 +10,16 @@ int main(){
 	int min = 0;
 	int max = 10;
 	int number = rand()%(max-min + 1) + min;
-	for (int i = 0; i < 64; i++){
-		arr[i] = number;
-		number = rand()%(max-min + 1) + min;
-	}
+	// for (int i = 0; i < 64; i++){
+	// 	arr[i] = number;
+	// 	number = rand()%(max-min + 1) + min;
+	// }
 
 	while(1){
+		for (int i = 0; i < 64; i++){
+			arr[i] = number;
+			number = rand()%(max-min + 1) + min;
+		}
 
 		cout << "Content-Type: text/event-stream\r\n\r\n";
 		cout << "Cache-Control: no-cache\r\n\r\n";
@@ -37,12 +41,12 @@ int main(){
 				}
 			}
 			cout <<"]}}" <<"\r\n\r\n";	
-			min += 10;
+			/*min += 10;
 			max += 10;
 			for (int i = 0; i < 64; i++){
 				arr[i] = number;
 				number = rand()%(max-min + 1) + min;
-			}
+			}*/
 		}		
 			
 
