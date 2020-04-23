@@ -2,7 +2,7 @@ class Source{
 	constructor(){
 		this.source = new EventSource("../../cgi-bin/cubeEventServer.cgi");
 		this.obj = 0;
-		this.arr = new Array(64);
+		this.arr = [];
 	}
 
 	update(){
@@ -47,10 +47,9 @@ class Source{
 		    myChart.update();
 	    });
 	    this.source.addEventListener("instrument", function(evt){
-	        this.obj = JSON.parse(evt.data);
-	        for (let i = 0; i < 64; i++){
-	        	this.arr[i]=this.obj.instrument.matrice[i];
-	        }
+	        this.obj = JSON.parse(evt.data)
+	        this.arr=this.obj.instrument.matrice;
+	       
 	    });
 	}
 
