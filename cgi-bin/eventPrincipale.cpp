@@ -20,7 +20,7 @@ int main(){
 
 	while(1){
 
-		usleep(1000000);
+		// usleep(1000000);
 
 				
 		for (int i = 0; i < 64; i++){
