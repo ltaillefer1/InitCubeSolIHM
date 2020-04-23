@@ -20,7 +20,7 @@ int main(){
 
 	while(1){
 
-		 sleep_for(chrono::seconds(1));
+		 sleep_for(seconds(1));
 
 
 		for (int i = 0; i < 64; i++){
