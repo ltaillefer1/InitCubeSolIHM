@@ -136,8 +136,9 @@ int main(){
 			<<"\"cameraIR\":"
 			<<rand()%2
 
-	 	<< "}"<<"\r\n\r\n";
+	 	<< "}"<<"\r\n\r\n";		
 		
-		return 0;
-	}		
+	}
+
+	return 0;		
 }
