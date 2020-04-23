@@ -24,7 +24,7 @@ int main(){
 		for (int i = 0; i < 9 ;i++){		
 
 			cout << "event: instrument"<<"\n";
-			cout << "data : "<<"{\"instrument\":{"; 
+			cout << "data: "<<"{\"instrument\":{"; 
 
 			cout << "\"matrice\" : ["  ;
 
