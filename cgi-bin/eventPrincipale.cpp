@@ -34,7 +34,7 @@ int main(){
 				cout << arr[j];
 			}
 		}
-		cout <<"]}" <<"\r\n\r\n";	
+		cout <<"]}}" <<"\r\n\r\n";	
 		min += 10;
 		max += 10;
 		for (int i = 0; i < 64; i++){
