@@ -48,7 +48,7 @@ class Source{
 	    });
 	    this.source.addEventListener("instrument", function(evt){
 	        this.obj = JSON.parse(evt.data);
-	        for (let i = 0; i < this.arr.length; i++){
+	        for (let i = 0; i < 64; i++){
 	        	this.arr[i]=this.obj.instrument.matrice[i];
 	        }
 	    });
