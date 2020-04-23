@@ -25,7 +25,7 @@ int main(){
 		cout << "Cache-Control: no-cache\r\n\r\n";
 
 			
-		for (int i = 0; i < 9 ;i++){		
+		// for (int i = 0; i < 9 ;i++){		
 
 			cout << "event: instrument"<<"\n";
 			cout << "data: "<<"{\"instrument\":{"; 
@@ -47,7 +47,7 @@ int main(){
 				arr[i] = number;
 				number = rand()%(max-min + 1) + min;
 			}*/
-		}		
+		// }		
 			
 
 			cout << "event: etat"<<"\n";
