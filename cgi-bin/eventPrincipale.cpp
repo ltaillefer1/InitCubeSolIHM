@@ -138,8 +138,7 @@ int main(){
 
 	 	<< "}"<<"\r\n\r\n";	
 
-	 	sleep(1);	
-		
+	 	usleep(1000000);		
 	}
 
 	return 0;		
