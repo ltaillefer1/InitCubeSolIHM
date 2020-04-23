@@ -13,7 +13,7 @@
 
 #ifndef LIB_H
 #define LIB_H
-#include <ctime>
+#include <chrono>
 #include <arpa/inet.h>
 #include <fstream>
 #include <iostream>
