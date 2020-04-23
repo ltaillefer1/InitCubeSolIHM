@@ -21,8 +21,13 @@ int main(){
 		
 	for (int i = 0; i < 9 ;i++){		
 
-		cout << "event: matrice"<<"\n";
-		cout << "data : "<<"{\"matrice\":["; 
+		cout << "event: instrument"<<"\n";
+		cout << "data : "<<"{\"instrument\":{"; 
+
+		cout << "\"matrice\" : ["  ;
+
+
+
 		for (int j = 0; j < 64; j++){
 			cout << arr[j]<<",";
 			if (j == 63){
