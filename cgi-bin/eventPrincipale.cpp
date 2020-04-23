@@ -15,14 +15,14 @@ int main(){
 	// 	number = rand()%(max-min + 1) + min;
 	// }
 
+	cout << "Content-Type: text/event-stream\r\n\r\n";
+	cout << "Cache-Control: no-cache\r\n\r\n";
+
 	while(1){
 		for (int i = 0; i < 64; i++){
 			arr[i] = number;
 			number = rand()%(max-min + 1) + min;
-		}
-
-		cout << "Content-Type: text/event-stream\r\n\r\n";
-		cout << "Cache-Control: no-cache\r\n\r\n";
+		}		
 
 			
 		// for (int i = 0; i < 9 ;i++){		
