@@ -40,10 +40,10 @@ void InitCubeServeur::attendreConnexion(){
 		perror("Erreur d'ecoute de la socket.");
 		exit(0);
 	}
-    cout << "En Attente De Connexion:"+endl;
+    cout << "En Attente De Connexion:"<<endl;
     socklen_t taille_ecoute = sizeof(ecoute);//Taille de la socket
     sockAccept=accept(canal,(struct sockaddr*)&ecoute, &taille_ecoute);//bloque l'attente de connexion.
-    cout << "Connexion du client:\r\n"+endl;
+    cout << "Connexion du client:\r\n"<<endl;
 
     if(sockAccept<0){
             close(canal);
@@ -93,12 +93,12 @@ string InitCubeServeur::genFakeTram(){
         }
     }
 
-    testInstru += "]}}"+"\r\n\r\n";
+    testInstru += ']}}'+'\r\n\r\n';
 
     string testEtat =  "{\"etat\":{  \"stockage\": { " 
 
                     // Stockage libre en Mo(Valeur comprise entre 0 et 100) 
-                    + "\"stockLibreMo\" :" + rand()%101 + ","               
+                    + '\"stockLibreMo\" :' + rand()%101 + ','               
 
                     //Stockage libre en pourcentage(Valeur comprise entre 0 et 100)
                     + "\"stockLibreEnP\" :"+ rand()%101 + "},"         
