@@ -93,9 +93,9 @@ string InitCubeServeur::genFakeTram(){
         }
     }
 
-    testInstru += "]}}"+"\r\n\r\n";
+    testInstru +=  std::string("]}}"+"\r\n\r\n");
 
-    string testEtat =  "{\"etat\":{  \"stockage\": { " 
+    string testEtat =   std::string("{\"etat\":{  \"stockage\": { ") 
 
                     // Stockage libre en Mo(Valeur comprise entre 0 et 100) 
                     + "\"stockLibreMo\" :" + rand()%101 + ","               
