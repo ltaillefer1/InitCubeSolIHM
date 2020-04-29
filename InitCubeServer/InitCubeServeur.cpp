@@ -95,7 +95,7 @@ string InitCubeServeur::genFakeTram(){
 
     testInstru +=  std::string("]}}\r\n\r\n");
 
-    string testEtat =   std::string("{\"etat\":{  \"stockage\": { ") 
+    string testEtat =   "{\"etat\":{  \"stockage\": { " 
 
                     // Stockage libre en Mo(Valeur comprise entre 0 et 100) 
                      "\"stockLibreMo\" :"  rand()%101  ","               
