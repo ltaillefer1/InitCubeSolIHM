@@ -13,6 +13,7 @@
 
 #ifndef LIB_H
 #define LIB_H
+#include <netdb.h>
 #include <arpa/inet.h>
 #include <fstream>
 #include <iostream>

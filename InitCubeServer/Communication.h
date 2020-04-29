@@ -18,7 +18,7 @@ private:
     string adresse;
     string port;
     char buffer[2000];
-    struct addrinfo *hints, *res;
+    struct addrinfo hints, *res;
 };
 
 #endif /* COMMUNICATION_H */
