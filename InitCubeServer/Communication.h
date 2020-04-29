@@ -1,10 +1,6 @@
 #ifndef COMMUNICATION_H  
 #define COMMUNICATION_H
-#include <string.h>
-#include <cstdlib>
-#include <stdlib.h>
-#include <stdio.h>
-#include <iostream>
+#include "Lib.h"
 
 using namespace std;
 

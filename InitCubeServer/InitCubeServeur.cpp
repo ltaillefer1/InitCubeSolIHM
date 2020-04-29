@@ -18,7 +18,7 @@
 using json = nlohmann::json;
 
 InitCubeServeur::InitCubeServeur() {
-    ecoute.sin_port=htons(9927);//port d'écoute.
+    ecoute.sin_port=htons(9950);//port d'écoute.
 	ecoute.sin_addr.s_addr=inet_addr("127.0.0.1");
 	ecoute.sin_family=AF_INET;
 	canal=socket(AF_INET, SOCK_STREAM,0);//Création de la socket
@@ -70,7 +70,7 @@ void InitCubeServeur::transmettre(char* message, int taille)
     }
 }
 
-char* InitCubeServeur::genFakeTram(){
+string InitCubeServeur::genFakeTram(){
     int arr = [64];
     int max = 10;
     int min = 0;
