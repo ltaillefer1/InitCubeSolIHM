@@ -4,12 +4,12 @@ all: InitCubeServeur
 
 InitCubeServeur : InitCubeServeur.o
 		g++ -lpthread -o InitCubeServeur InitCubeServeur.o $(CFLAGS)
-InitCubeServeur.o : InitCubeServeur.cpp Communication.cpp
-		g++ -lpthread -o InitCubeServeur.o Communication.o -c InitCubeServeur.cpp Communication.cpp $(CFLAGS)
+InitCubeServeur.o : InitCubeServeur.cpp InitCubeServeur.h Communication.cpp
+		g++ -lpthread -o InitCubeServeur.cpp Communication.cpp -c InitCubeServeur.o Communication.o $(CFLAGS)
 CubeEventServer.o: CubeEventServer.cpp Communication.cpp
-		g++ -lpthread -o CubeEventServer.o Communication.o -c CubeEventServer.cpp Communication.cpp $(CFLAGS)
+		g++ -lpthread -o CubeEventServer.cpp Communication.cpp -c CubeEventServer.o Communication.o $(CFLAGS)
 Communication.o : Communication.cpp 
-		g++ -lpthread -o Communication.o -c Communication.cpp $(CFLAGS)
+		g++ -lpthread -o Communication.cpp -c Communication.o $(CFLAGS)
 clean : 
 		rm -rf *.o
 mrproper: clean
