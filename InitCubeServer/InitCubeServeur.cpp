@@ -98,23 +98,23 @@ string InitCubeServeur::genFakeTram(){
     string testEtat =   "{\"etat\":{  \"stockage\": { " 
 
                     // Stockage libre en Mo(Valeur comprise entre 0 et 100) 
-                     "\"stockLibreMo\" :"  rand()%101  ","               
+                     "\"stockLibreMo\" :"  std::string(rand()%101)  ","               
 
                     //Stockage libre en pourcentage(Valeur comprise entre 0 et 100)
-                     "\"stockLibreEnP\" :" rand()%101 + "},"         
+                     "\"stockLibreEnP\" :" std::string(rand()%101)  "},"         
 
 
                 //Ouverture de l'objet batterie dans le JSON
                 "\"batterie\" : {"
 
                     //Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
-                    "\"niveauDeCharge\" : "rand()%101 ","              
+                    "\"niveauDeCharge\" : " std::string(rand()%101) ","              
 
                     //La tension de sortie de la batterie (Valeur comprise entre 0 et 100)
-                    "\"tension\" : "rand()%101","             
+                    "\"tension\" : "std::string(rand()%101)","             
 
                     //Le courant en sortie de batterie(Valeur comprise entre 0 et 100)
-                    "\"courant\" : "rand()%101
+                    "\"courant\" : "std::string(rand()%101)
                     "},"
 
 
@@ -123,11 +123,11 @@ string InitCubeServeur::genFakeTram(){
 
                     //RAM disponible en Mo(Valeur comprise entre 0 et 100) 
                     "\"memoireDispoMo\" : " 
-                    rand()%101","
+                    std::string(rand()%101)","
 
                     //Occupation de la RAM en pourcentage(Valeur comprise entre 0 et 100)
                     "\"occupMemoire\" : "
-                    rand()%101"},"
+                    std::string(rand()%101)"},"
 
                 //Ouverture de l'objet magneto dans le JSON
                 "\"magneto\" : {"
@@ -135,51 +135,51 @@ string InitCubeServeur::genFakeTram(){
                     //Le niveau de charge de la batterie en pourcentage(Valeur comprise entre 0 et 100)
                     //Magnetomètre
                     "\"ValeurMagnetoBX\":"
-                    premiereValeurMagneto","
+                    std::string(premiereValeurMagneto)","
 
                     //Magnetomètre
                     "\"ValeurMagnetoBY\":"
-                    deuxiemeValeurMagneto","
+                    std::string(deuxiemeValeurMagneto)","
 
                     //Magnetomètre
                     "\"ValeurMagnetoBZ\":"
-                    troisiemeValeurMagneto"},"
+                    std::string(troisiemeValeurMagneto)"},"
 
                     //Ouverture de l'objet camera
                 "\"camera\" : { "
 
-                    "\"InfoCamera1\" : "rand()%101","
+                    "\"InfoCamera1\" : "std::string(rand()%101)","
 
                     //Caméra
-                    "\"InfoCamera2\" : "rand()%101
+                    "\"InfoCamera2\" : "std::string(rand()%101)
                     "},"
                 //ouverture de l'objet temperature Systeme
                 "\"temperatureSys\" : { "
 
                     //température0
                      "\"temp\":"
-                     rand()%61+","
+                     std::string(rand()%61)+","
 
                     //température1
                     "\"temp1\":"
-                    rand()%61+","
+                    std::string(rand()%61)+","
 
                     //température2
                     "\"temp2\":"
-                    rand()%61","
+                    std::string(rand()%61)","
 
                     //temperature3
                     "\"temp3\":"
-                    rand()%61","
+                    std::string(rand()%61)","
 
                     //temperature4
                     "\"temp4\":"
-                    rand()%61
+                    std::string(rand()%61)
                     "},"
          
                 //cameraIR
                 "\"cameraIR\":"
-                rand()%2
+                std::string(rand()%2)
 
              "}}\r\n\r\n";
 
