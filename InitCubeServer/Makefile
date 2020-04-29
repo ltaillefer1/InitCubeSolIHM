@@ -3,7 +3,7 @@ CFLAGS=-W -Wall -ansi -pedantic
 all: InitCubeServeur
 
 InitCubeServeur: InitCubeServeur.o
-		g++ -lpthread -o InitCubeServeur InitCubeServeur.o $(CFLAGS)
+		g++ -lpthread -o InitCubeServeur.o $(CFLAGS)
 InitCubeServeur.o: InitCubeServeur.cpp InitCubeServeur.h Communication.cpp
 		g++ -lpthread -o InitCubeServeur.cpp Communication.cpp -c InitCubeServeur.o Communication.o $(CFLAGS)
 CubeEventServer.o: CubeEventServer.cpp Communication.cpp
