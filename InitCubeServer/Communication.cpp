@@ -23,7 +23,7 @@ void Communication::lancerInitCubeServeur() {
 //La méthode connexion tente de se connecter au serveur InitCubeServeur
 int Communication::connexion(){
     //Declaration des variables.
-    struct addrinfo hints, * res;
+    
     int status;
 
 
