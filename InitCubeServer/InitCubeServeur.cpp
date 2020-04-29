@@ -15,7 +15,7 @@
 
 #define NB_CLIENT_MAX 20
 
-using json = nlohmann::json;
+using namespace std;
 
 InitCubeServeur::InitCubeServeur() {
     ecoute.sin_port=htons(9950);//port d'écoute.
@@ -40,10 +40,10 @@ void InitCubeServeur::attendreConnexion(){
 		perror("Erreur d'ecoute de la socket.");
 		exit(0);
 	}
-    cout+"En Attente De Connexion:"+endl;
+    cout << "En Attente De Connexion:"+endl;
     socklen_t taille_ecoute = sizeof(ecoute);//Taille de la socket
     sockAccept=accept(canal,(struct sockaddr*)&ecoute, &taille_ecoute);//bloque l'attente de connexion.
-    cout+"Connexion du client:\r\n"+endl;
+    cout << "Connexion du client:\r\n"+endl;
 
     if(sockAccept<0){
             close(canal);
@@ -71,7 +71,10 @@ void InitCubeServeur::transmettre(char* message, int taille)
 }
 
 string InitCubeServeur::genFakeTram(){
-    int arr = [64];
+    int premiereValeurMagneto = 0;
+    int deuxiemeValeurMagneto = 0;
+    int troisiemeValeurMagneto = 0;
+    int arr[64];
     int max = 10;
     int min = 0;
     int number = rand()%(max-min + 1) + min;
