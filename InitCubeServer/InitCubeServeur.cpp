@@ -89,8 +89,8 @@ string InitCubeServeur::genFakeTram(){
 
     json testInstru = {
         {
-            "instrument" : {
-                "matrice" : [
+            "instrument": {
+                "matrice": [
 
                     ]
             }
