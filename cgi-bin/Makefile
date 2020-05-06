@@ -1,4 +1,4 @@
-CFLAGS=-W -Wall -ansi -pedantic
+CFLAGS=-W -Wall -ansi -pedantic  -std=c++11
 
 all: cubeEventServer.cgi
 
