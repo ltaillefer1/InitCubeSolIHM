@@ -10,9 +10,11 @@
  *
  * Created on 28 mars 2019, 10:34
  */
-#include "Lib.h"
+
 #ifndef INITCUBESERVEUR_H
 #define INITCUBESERVEUR_H
+
+#include "Lib.h"
 
 using namespace std;
 
