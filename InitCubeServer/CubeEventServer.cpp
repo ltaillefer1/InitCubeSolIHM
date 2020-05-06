@@ -57,6 +57,7 @@ void CubeEventServer::traiterEvenement()
 		identifierEvt(message);
 		transmettreJSON('etat');
 		transmettreJSON('instrument');
+		transmettreJSON('Measure');
 	} 
     	// this->transmettreEtat(com->getBuffer());
     	
