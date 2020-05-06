@@ -14,8 +14,7 @@
 #ifndef INITCUBESERVEUR_H
 #define INITCUBESERVEUR_H
 
-// #include "Lib.h"
-#include "json.hpp"
+#include "../cgi-bin/Lib.h"
 
 using namespace std;
 
