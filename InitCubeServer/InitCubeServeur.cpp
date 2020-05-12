@@ -87,16 +87,10 @@ string InitCubeServeur::genFakeTram(){
        number = rand()%(max-min + 1) + min;
     }
 
-    json testInstru = {
-        {"instrument", {
-                "matrice", [],
-            }
-        }
-    };
+    json testInstru;
 
-    for (int i = 0; i < 64; i++){
-        testInstru["instrument"]["matrice"].push_back(arr[i]);
-    }
+    testInstru["instrument"]["matrice"] = arr;
+    
 
     json testEtat = {
         {"etat" ,{
