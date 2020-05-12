@@ -88,12 +88,10 @@ string InitCubeServeur::genFakeTram(){
     }
 
     json testInstru = {
-        "instrument", {
-                "matrice", [
-
-                    ]
+        {"instrument", {
+                {"matrice", []}, 
             }
-        }
+        }};
 
     for (int i = 0; i < 64; i++){
         testInstru.instrument.matrice.push_back(arr[i]);
@@ -131,7 +129,7 @@ string InitCubeServeur::genFakeTram(){
             {"temp4" , rand()%61},
         }},
         {"cameraIR" , rand()%2}
-    }
+    };
 
 
     string trameEtat = testEtat.dump();
