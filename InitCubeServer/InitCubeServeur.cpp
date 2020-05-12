@@ -95,7 +95,7 @@ string InitCubeServeur::genFakeTram(){
     };
 
     for (int i = 0; i < 64; i++){
-        testInstru.instrument.matrice.push_back(arr[i]);
+        testInstru["instrument"]["matrice"].push_back(arr[i]);
     }
 
     json testEtat = {
