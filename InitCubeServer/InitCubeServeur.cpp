@@ -88,8 +88,8 @@ string InitCubeServeur::genFakeTram(){
     }
 
     json testInstru = {
-        "instrument": {
-                "matrice": [
+        "instrument", {
+                "matrice", [
 
                     ]
             }
@@ -100,37 +100,37 @@ string InitCubeServeur::genFakeTram(){
     }
 
     json testEtat = {
-        "etat" :{
-          "stockage" : rand()%101,
-          "stockLibreMo" : rand()%101,
-          "stockLibreEnP" : rand()%101,
+        "etat" ,{
+          {"stockage" , rand()%101}
+          {"stockLibreMo" , rand()%101}
+          {"stockLibreEnP" , rand()%101}
         } 
-        "batterie" : {
-            "niveauDeCharge" : rand()%101,
-            "tension" : rand()%101,
-            "courant" : rand()%101,
+        "batterie" , {
+            {"niveauDeCharge" , rand()%101}
+            {"tension" , rand()%101}
+            {"courant" , rand()%101}
         }
-        "memoire" : {
-            "memoireDispoMo" : rand()%101,
-            "occupMemoire" : rand()%101,
+        "memoire" , {
+           { "memoireDispoMo" , rand()%101}
+            {"occupMemoire" , rand()%101}
         }
-        "magneto" : {
-            "ValeurMagnetoBX" : premiereValeurMagneto,
-            "ValeurMagnetoBY" : deuxiemeValeurMagneto,
-            "ValeurMagnetoBZ" : troisiemeValeurMagneto,
+        "magneto" , {
+            {"ValeurMagnetoBX" , premiereValeurMagneto}
+            {"ValeurMagnetoBY" , deuxiemeValeurMagneto}
+            {"ValeurMagnetoBZ" , troisiemeValeurMagneto}
         }
-        "camera" : {
-            "InfoCamera1" : rand()%101,
-            "InfoCamera2" : rand()%101,
+        "camera" , {
+            {"InfoCamera1" , rand()%101}
+            {"InfoCamera2" , rand()%101}
         }
-        "temperatureSys" : {
-            "temp" : rand()%61,
-            "temp1" : rand()%61,
-            "temp2" : rand()%61,
-            "temp3" : rand()%61,
-            "temp4" : rand()%61,
+        "temperatureSys" , {
+           { "temp" , rand()%61}
+            {"temp1" , rand()%61}
+            {"temp2" , rand()%61}
+           {"temp3" , rand()%61}
+            {"temp4" , rand()%61}
         }
-        "cameraIR" : rand()%2,
+        {"cameraIR" , rand()%2}
     }
 
 
