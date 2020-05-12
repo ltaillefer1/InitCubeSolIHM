@@ -89,9 +89,9 @@ string InitCubeServeur::genFakeTram(){
 
     json testInstru = {
         {"instrument", {
-                {"matrice", []}, 
+                {"matrice", []} 
             }
-        },
+        }
     };
 
     for (int i = 0; i < 64; i++){
